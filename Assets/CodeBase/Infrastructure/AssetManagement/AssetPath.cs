@@ -15,5 +15,9 @@ namespace CodeBase.Infrastructure.AssetManagement
         public const string QuestionFieldPath = "Canvas/QuestionTextField";
         
         public const string ButtonLevelPath = "Grid/ButtonLevel";
+        
+        public const string CanvasLobbyPath = "UI/CanvasLobby";
+        
+        public const string DIContainerPath = "Container/DIContainer";
     }
 }

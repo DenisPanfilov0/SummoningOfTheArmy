@@ -7,11 +7,19 @@ namespace CodeBase.Config
     public class LevelConfig : ScriptableObject
     {
         [SerializeField] private List<EnemySpawnConfig> _spawnConfig;
+
+        [SerializeField] private int _currnetLevel;
         
         public List<EnemySpawnConfig> SpawnConfig
         {
             get => _spawnConfig;
             set => _spawnConfig = value;
+        }
+        
+        public int CurrnetLevel
+        {
+            get => _currnetLevel;
+            set => _currnetLevel = value;
         }
     }
     

@@ -7,7 +7,7 @@ namespace CodeBase.Game
     {
         [SerializeField] private GameDeck _gameDeck;
         
-        private Game _game;
+        public Game _game;
 
         private void Awake()
         {

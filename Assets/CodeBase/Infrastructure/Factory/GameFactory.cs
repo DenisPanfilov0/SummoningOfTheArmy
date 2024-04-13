@@ -24,6 +24,12 @@ namespace CodeBase.Infrastructure.Factory
         public GameObject CreateGrid(Transform at) => 
             Instantiate(AssetPath.GridPath, at);
 
+        public GameObject CreateCanvasLobby() =>
+            Instantiate(AssetPath.CanvasLobbyPath);
+
+        public GameObject CreateDIContainer() => 
+            Instantiate(AssetPath.DIContainerPath);
+
 
         private GameObject Instantiate(string prefabPath)
         {

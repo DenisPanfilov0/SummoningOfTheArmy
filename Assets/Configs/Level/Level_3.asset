@@ -15,3 +15,4 @@ MonoBehaviour:
   _spawnConfig:
   - _enemy: "\u0412\u0435\u0434\u044C\u043C\u0430"
     _enemyAmount: 15
+  _currnetLevel: 3

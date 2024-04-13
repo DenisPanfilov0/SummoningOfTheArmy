@@ -8,5 +8,9 @@ namespace CodeBase.Infrastructure.Factory
         GameObject CreateCanvas();
         
         GameObject CreateGrid(Transform at);
+
+        GameObject CreateCanvasLobby();
+        
+        GameObject CreateDIContainer();
     }
 }

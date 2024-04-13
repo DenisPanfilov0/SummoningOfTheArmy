@@ -14,8 +14,6 @@ namespace CodeBase.Infrastructure.State
         
         private readonly AllServices _services;
         
-        private const string GameplaySceneName = "Game";
-        
         private const string InitialSceneName = "Initial";
         
         private const string MainMenuSceneName = "MainMenu";
