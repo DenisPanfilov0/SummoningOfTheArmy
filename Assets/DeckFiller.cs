@@ -13,27 +13,19 @@ public class DeckFiller : MonoBehaviour
     {
         FillDeck();
         
-        GetComponentInParent<InventoryFiller>().OnChangeDeck += Printer;
+        GetComponentInParent<InventoryFiller>().OnChangeDeck += FillDeck;
     }
 
     private void FillDeck()
     {
         foreach (var image in _deck)
         {
-            image.color = Color.white;
+            image.sprite = null;
         }
         
         for (int i = 0; i < _gameDeck.Deck.Count; i++)
         {
             _deck[i].sprite = _gameDeck.Deck[i].Image;
         }
-    }
-
-    private void Printer()
-    {
-        Debug.Log("ergergregregergr");
-        Debug.Log("ergergregregergr");
-        Debug.Log("ergergregregergr");
-        Debug.Log("ergergregregergr");
     }
 }

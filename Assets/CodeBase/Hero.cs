@@ -9,6 +9,8 @@ namespace CodeBase
 
         [SerializeField] private Button _selectHero;
 
+        [SerializeField] private Image _spriteHero;
+
         private Outline _outline;
 
         public HeroConfig Config
@@ -38,6 +40,11 @@ namespace CodeBase
         public void ChangeOutline()
         {
             _outline.enabled = !_outline.enabled;
+        }
+
+        public void ChangeSpriteHero(Sprite hero)
+        {
+            _spriteHero.sprite = hero;
         }
         
         private void ChangeOutline(bool isUsed)

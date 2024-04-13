@@ -1701,6 +1701,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _heroCollection: {fileID: 11400000, guid: 50aed19844898e846a7f4af245205651, type: 2}
+  _gameDeck: {fileID: 11400000, guid: f900411f51c1c294ca11814722bdaf70, type: 2}
   _contentParent: {fileID: 8450137090221029814}
   _heroPrefab: {fileID: 8101683474063495037, guid: 96c395e50a4cc7146ba83db7a8a2e21f, type: 3}
   _currentHeroConfig: {fileID: 0}

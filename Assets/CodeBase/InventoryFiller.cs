@@ -10,6 +10,8 @@ namespace CodeBase
     {
         [SerializeField] private HeroCollection _heroCollection;
 
+        [SerializeField] private GameDeck _gameDeck;
+
         [SerializeField] private Transform _contentParent;
 
         [SerializeField] private GameObject _heroPrefab;
@@ -40,7 +42,7 @@ namespace CodeBase
                 Hero hero = obj.GetComponent<Hero>();
                 hero.Config = heroConfig;
                 hero.SelectHero.onClick.AddListener(() => SelectHero(heroConfig, hero));
-                hero.GetComponent<Image>().sprite = heroConfig.Image;
+                hero.ChangeSpriteHero(heroConfig.Image);
             }
         }
 
@@ -67,6 +69,7 @@ namespace CodeBase
             _currentHero.ChangeOutline();
             _currentHeroConfig.IsUsedDeca = !_currentHeroConfig.IsUsedDeca;
             SetInteractableButtons(false, true);
+            _gameDeck.Deck.Add(_currentHeroConfig);
             OnChangeDeck?.Invoke();
         }
         
@@ -75,6 +78,7 @@ namespace CodeBase
             _currentHero.ChangeOutline();
             _currentHeroConfig.IsUsedDeca = !_currentHeroConfig.IsUsedDeca;
             SetInteractableButtons(true, false);
+            _gameDeck.Deck.Remove(_currentHeroConfig);
             OnChangeDeck?.Invoke();
         }
         

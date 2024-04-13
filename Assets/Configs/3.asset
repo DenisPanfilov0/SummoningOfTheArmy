@@ -15,5 +15,5 @@ MonoBehaviour:
   _id: 3
   _health: 3
   _damage: 3
-  _isUsedDeca: 0
+  _isUsedDeca: 1
   _image: {fileID: 4926131633840504183, guid: 4db96a9e593d734409498479cf84ed35, type: 3}
