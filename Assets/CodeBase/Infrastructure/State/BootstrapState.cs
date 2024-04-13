@@ -19,6 +19,8 @@ namespace CodeBase.Infrastructure.State
         private const string InitialSceneName = "Initial";
         
         private const string MainMenuSceneName = "MainMenu";
+        
+        private const string LobbySceneName = "Lobby";
 
         public BootstrapState(GameStateMachine stateMachine, SceneLoader sceneLoader, AllServices services)
         {
@@ -35,7 +37,7 @@ namespace CodeBase.Infrastructure.State
         }
 
         private void EnterLoadLeve() => 
-            _stateMachine.Enter<LoadLevelState, string>(MainMenuSceneName);
+            _stateMachine.Enter<LoadLevelState, string>(LobbySceneName);
 
         public void Exit()
         {
