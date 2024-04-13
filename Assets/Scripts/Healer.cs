@@ -9,4 +9,9 @@ public class Healer : AllyUnit
         Init(healt, damageValue);
         _healValue = healValue;
     }
+
+    public override void Move()
+    {
+        throw new System.NotImplementedException();
+    }
 }

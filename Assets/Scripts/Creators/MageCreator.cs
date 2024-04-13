@@ -1,16 +1,14 @@
+using CodeBase.Infrastructure.AssetManagement;
 using UnityEngine;
 
-namespace Creators
+public class MageCreator : AllyCreator
 {
-    public class MageCreator : AllyCreator
+    public override AllyUnit FactoryMethod(Transform parent)
     {
-        public override AllyUnit FactoryMethod()
-        {
-            var prefab = Resources.Load<GameObject>("Mage");
-            var go = GameObject.Instantiate(prefab);
-            var unitComponent = go.AddComponent<Mage>();
-            unitComponent.Init(0, 0, 0, 0);
-            return (Mage)unitComponent;
-        }
+        var assetProvider = new AssetProvider();
+        var go = assetProvider.Instantiate("Prefabs/MagePrefab", parent);
+        var unitComponent = go.AddComponent<MageUnit>();
+        unitComponent.Init(0, 0, 0, 0, 0);
+        return unitComponent;
     }
 }

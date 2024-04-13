@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Creators;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,7 +17,7 @@ public class UIController : MonoBehaviour
     private void CreateMage()
     {
         AllyCreator creator = new MageCreator();
-        Mage mageUnit = (Mage)creator.FactoryMethod();
-        mageUnit.Attack();
+        MageUnit mageUnitUnit = (MageUnit)creator.FactoryMethod(_magePrefabSpawnPosition);
+        //mageUnitUnit.Attack();
     }
 }

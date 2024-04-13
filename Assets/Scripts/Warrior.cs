@@ -16,4 +16,9 @@ public class Warrior : AllyUnit
     {
         //TODO: прописать в классе с атаками спелл
     }
+
+    public override void Move()
+    {
+        throw new System.NotImplementedException();
+    }
 }

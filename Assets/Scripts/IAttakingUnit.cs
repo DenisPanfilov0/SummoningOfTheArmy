@@ -1,4 +1,4 @@
 public interface IAttackingUnit
 {
-    void Attack();
+    void Attack(Unit target);
 }

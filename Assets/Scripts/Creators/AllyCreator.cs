@@ -4,5 +4,5 @@ using UnityEngine;
 
 public abstract class AllyCreator
 {
-    public abstract AllyUnit FactoryMethod();
+    public abstract AllyUnit FactoryMethod(Transform parent);
 }

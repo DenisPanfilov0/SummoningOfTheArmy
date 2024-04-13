@@ -2,15 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class AllyUnit : MonoBehaviour, IUnits
+public abstract class AllyUnit : Unit
 {
-    [SerializeField] protected int _health;
-    [SerializeField] protected float _attackValue;
-    //убрать атаку и добавить скорость передвижения
-
-    protected void Init(int health, float attackValue)
+    protected void Init(int health, float movementSpeed)
     {
         _health = health;
-        _attackValue = attackValue;
+        _movementSpeed = movementSpeed;
     }
 }
