@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class EnemyUnit : MonoBehaviour, IUnits
+public abstract class EnemyUnit : Unit
 {
     public void Attack()
     {
         
     }
 
-    public void Move()
+    public override void Move()
     {
     }
 }
