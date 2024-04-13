@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using CodeBase.Game;
+using CodeBase.Infrastructure.AssetManagement;
 using CodeBase.Infrastructure.Factory;
 using CodeBase.Services;
 
@@ -20,7 +21,7 @@ namespace CodeBase.Infrastructure.State
                 [typeof(LoadLevelState)] = new LoadLevelState(this, sceneLoader, services.Single<IGameFactory>()),
                 [typeof(GamePlayState)] = new GamePlayState(this, services.Single<IGameFactory>()),
                 [typeof(MainMenuState)] = new MainMenuState(this, sceneLoader, services.Single<IGameFactory>()),
-                [typeof(LobbyState)] = new LobbyState(this, sceneLoader, gameDeck),
+                [typeof(LobbyState)] = new LobbyState(this, sceneLoader, gameDeck, services.Single<IGameFactory>(), services.Single<IAssets>()),
             };
         }
 

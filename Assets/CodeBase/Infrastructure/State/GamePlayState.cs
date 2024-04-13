@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace CodeBase.Infrastructure.State
 {
-    public class GamePlayState : IPayloadedState<string>
+    public class GamePlayState : IState
     {
         private readonly GameStateMachine _stateMachine;
         
@@ -15,13 +15,16 @@ namespace CodeBase.Infrastructure.State
             _gameFactory = gameFactory;
         }
 
-        public void Enter(string payload)
+        public void Enter()
         {
+            Debug.Log("урааааа");
+            Debug.Log("урааааа");
+            Debug.Log("урааааа");
+            Debug.Log("урааааа");
         }
 
         public void Exit()
         {
-            Debug.Log("Exit State");
         }
     }
 }

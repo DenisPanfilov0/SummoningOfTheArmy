@@ -17,3 +17,4 @@ MonoBehaviour:
     _enemyAmount: 5
   - _enemy: "\u0412\u043E\u043B\u043A"
     _enemyAmount: 10
+  _currnetLevel: 1

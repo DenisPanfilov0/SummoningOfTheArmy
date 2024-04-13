@@ -1,4 +1,5 @@
 using CodeBase.Game;
+using CodeBase.Infrastructure.AssetManagement;
 using CodeBase.Infrastructure.Factory;
 using UnityEngine;
 
@@ -11,7 +12,7 @@ namespace CodeBase.Infrastructure.State
         private readonly SceneLoader _sceneLoader;
         
         private readonly IGameFactory _gameFactory;
-
+        
         public LoadLevelState(GameStateMachine stateMachine, SceneLoader sceneLoader, IGameFactory gameFactory)
         {
             _stateMachine = stateMachine;
@@ -20,16 +21,23 @@ namespace CodeBase.Infrastructure.State
         }
 
         public void Enter(string payload) => 
-            _sceneLoader.Load(payload, OnLoaded);
+            _sceneLoader.Load(payload, () => OnLoaded(payload));
 
         public void Exit()
         {
             Debug.Log("Exit State");
         }
 
-        private void OnLoaded()
+        private void OnLoaded(string payload)
         {
-            _stateMachine.Enter<LobbyState>();
+            if (payload == "Lobby")
+            {
+                _stateMachine.Enter<LobbyState>();
+            }
+            else if (payload == "GamePlay")
+            {
+                _stateMachine.Enter<GamePlayState>();
+            }
         }
     }
 }
