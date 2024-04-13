@@ -29,7 +29,7 @@ namespace CodeBase.Infrastructure.State
 
         private void OnLoaded()
         {
-            _stateMachine.Enter<MainMenuState>();
+            _stateMachine.Enter<LobbyState>();
         }
     }
 }

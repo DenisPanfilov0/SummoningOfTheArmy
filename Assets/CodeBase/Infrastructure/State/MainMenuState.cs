@@ -16,6 +16,7 @@ namespace CodeBase.Infrastructure.State
             _gameFactory = gameFactory;
         }
 
+
         public void Enter()
         {
         }

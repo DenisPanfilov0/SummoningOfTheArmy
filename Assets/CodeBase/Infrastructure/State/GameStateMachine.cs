@@ -12,7 +12,7 @@ namespace CodeBase.Infrastructure.State
         
         private IExitableState _activeState;
 
-        public GameStateMachine(SceneLoader sceneLoader, AllServices services)
+        public GameStateMachine(SceneLoader sceneLoader, AllServices services, GameDeck gameDeck)
         {
             _states = new Dictionary<Type, IExitableState>
             {
@@ -20,7 +20,7 @@ namespace CodeBase.Infrastructure.State
                 [typeof(LoadLevelState)] = new LoadLevelState(this, sceneLoader, services.Single<IGameFactory>()),
                 [typeof(GamePlayState)] = new GamePlayState(this, services.Single<IGameFactory>()),
                 [typeof(MainMenuState)] = new MainMenuState(this, sceneLoader, services.Single<IGameFactory>()),
-                [typeof(LoadlLobbyState)] = new LoadlLobbyState(this, sceneLoader),
+                [typeof(LobbyState)] = new LobbyState(this, sceneLoader, gameDeck),
             };
         }
 

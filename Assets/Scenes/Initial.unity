@@ -163,6 +163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4228d04a710b6c0448eefa03c58bfe4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _gameDeck: {fileID: 11400000, guid: f900411f51c1c294ca11814722bdaf70, type: 2}
 --- !u!1 &184337671
 GameObject:
   m_ObjectHideFlags: 0
@@ -590,7 +591,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97ab8a4695094517838ff61905c61a98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _deca: {fileID: 11400000, guid: f900411f51c1c294ca11814722bdaf70, type: 2}
+  deck: {fileID: 11400000, guid: f900411f51c1c294ca11814722bdaf70, type: 2}
   _button: {fileID: 1396187883}
 --- !u!4 &1269420627
 Transform:
