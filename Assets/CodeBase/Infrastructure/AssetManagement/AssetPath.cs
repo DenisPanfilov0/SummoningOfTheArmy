@@ -17,6 +17,8 @@ namespace CodeBase.Infrastructure.AssetManagement
         public const string ButtonLevelPath = "Grid/ButtonLevel";
         
         public const string CanvasLobbyPath = "UI/CanvasLobby";
+
+        public const string CanvasGamePlayPath = "UI/CanvasGamePlay";
         
         public const string DIContainerPath = "Container/DIContainer";
     }

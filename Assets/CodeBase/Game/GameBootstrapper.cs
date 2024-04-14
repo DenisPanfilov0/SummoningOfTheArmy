@@ -1,3 +1,4 @@
+using CodeBase.Config;
 using CodeBase.Infrastructure.State;
 using UnityEngine;
 

@@ -11,6 +11,8 @@ namespace CodeBase.Infrastructure.Factory
 
         GameObject CreateCanvasLobby();
         
+        GameObject CreateCanvasGamePlay();
+        
         GameObject CreateDIContainer();
     }
 }

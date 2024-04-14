@@ -10,6 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2c5d755aae5247c3abca271a535142d6, type: 3}
-  m_Name: UnitUpgrade
+  m_Name: Unit_3
   m_EditorClassIdentifier: 
-  _health: 0
+  _currenUpgradeLevel: 0
+  _maxUpgradeLevel: 5
+  _priceItem: 10
+  _priceModifier: 30
+  _priceModifierDecrement: 0
+  _description: "\u0422\u0440\u0435\u0442\u044C\u0435 \u0423\u043B\u0443\u0447\u0448\u0435\u043D\u0438\u0435"
+  _isUnitUpgrade: 0
+  _isAccountUpgrade: 0
+  _isUnlockUnit: 0
+  _unitUpgradeStat:
+    _unitConfig: {fileID: 0}
+    _healthIncrease: 0

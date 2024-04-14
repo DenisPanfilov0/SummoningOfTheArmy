@@ -1,5 +1,7 @@
+using CodeBase.Config;
 using CodeBase.Infrastructure.Factory;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace CodeBase.Infrastructure.State
 {
@@ -17,10 +19,14 @@ namespace CodeBase.Infrastructure.State
 
         public void Enter()
         {
-            Debug.Log("урааааа");
-            Debug.Log("урааааа");
-            Debug.Log("урааааа");
-            Debug.Log("урааааа");
+            LevelConfig config = GameObject.FindObjectOfType<DIContainer>().CurrentLevelConfig;
+            
+            //GameObject canvas = _gameFactory.CreateCanvasLobby();
+            
+            Debug.Log($"Урааа, мы перешли на уровень {config}");
+            Debug.Log($"Урааа, мы перешли на уровень {config}");
+            Debug.Log($"Урааа, мы перешли на уровень {config}");
+            Debug.Log($"Урааа, мы перешли на уровень {config}");
         }
 
         public void Exit()

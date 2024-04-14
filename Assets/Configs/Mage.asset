@@ -14,11 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _id: 0
   _unitName: 
-  _unitPrefab: {fileID: 0}
-  _movementSpeed: 0
+  _unitSprite: {fileID: 3234629978573100161, guid: 5f2cc183671f1604384b9a083d996a39, type: 3}
   _damage: 22
+  _health: 0
+  _movementSpeed: 0
+  _isBaseStats: 0
   _baseDamage: 20
   _baseHealth: 0
-  _percentageIncreaseInDamage: 10
-  _healingBonus: 0
-  _upgrade: {fileID: 11400000, guid: 3507136286ee0bb4f957b78d082b4db9, type: 2}
+  _isConstantStats: 0
+  _constantDamageIncrease: 0
+  _constantHealthIncrease: 0
+  _isPercentageStats: 0
+  _percentageDamageIncrease: 0
+  _percentageHealthIncrease: 0

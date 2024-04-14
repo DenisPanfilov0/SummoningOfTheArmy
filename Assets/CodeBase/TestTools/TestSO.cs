@@ -1,5 +1,7 @@
+using System;
 using CodeBase.EditorTool;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace CodeBase.TestTools
 {
@@ -7,10 +9,17 @@ namespace CodeBase.TestTools
     {
         [SerializeField] private UnitConfig _unitConfig;
 
+        [SerializeField] private Button _button;
+
+        private void Start()
+        {
+            _button.onClick.AddListener(Test);
+        }
+
         [Button]
         public void Test()
         {
-            _unitConfig.DamageCalculated();
+            Debug.Log("нажали на задний фон");
         }
     }
     

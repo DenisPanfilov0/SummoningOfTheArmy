@@ -741,6 +741,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DIContainer
       objectReference: {fileID: 0}
+    - target: {fileID: 567806875686369770, guid: af51f1ee0608569419f5fd83e50cb31e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7693710082950259592, guid: af51f1ee0608569419f5fd83e50cb31e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 634.5779

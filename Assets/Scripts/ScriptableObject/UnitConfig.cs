@@ -7,6 +7,10 @@ public class UnitConfig : ScriptableObject
     [SerializeField] private int _id;
     [SerializeField] private string _unitName;
     [SerializeField] private Sprite _unitSprite;
+    
+    public int ID => _id;
+    public Sprite UnitSprite => _unitSprite;
+
 
     
     [Header("Main Characteristics")]
@@ -19,6 +23,7 @@ public class UnitConfig : ScriptableObject
     public float MovementSpeed => _movementSpeed;
 
 
+    
     [Header("")] 
     [Header("Base Characteristics")] 
     [SerializeField] private bool _isBaseStats = false;
