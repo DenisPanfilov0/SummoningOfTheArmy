@@ -1,5 +1,6 @@
 using CodeBase;
 using CodeBase.Config;
+using CodeBase.Game;
 using CodeBase.Infrastructure.Factory;
 using CodeBase.Infrastructure.State;
 using UnityEngine;
@@ -40,6 +41,7 @@ public class TowerLevelFiller : MonoBehaviour
     private void SelectLevel(LevelConfig level)
     {
         _currentLevel = level;
+        FindObjectOfType<DIContainer>().Init(null, null, level);
         _stateMachine.Enter<LoadLevelState, string>(Constants.GameplaySceneName);
     }
 }

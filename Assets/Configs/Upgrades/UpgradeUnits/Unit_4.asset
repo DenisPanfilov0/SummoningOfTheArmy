@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: Unit_4
   m_EditorClassIdentifier: 
   _currenUpgradeLevel: 0
-  _maxUpgradeLevel: 10
-  _priceItem: 2
-  _priceModifier: 1.5
+  _maxUpgradeLevel: 5
+  _priceItem: 10
+  _priceModifier: 40
+  _priceModifierDecrement: 0
+  _description: "\u0427\u0435\u0442\u0432\u0435\u0440\u0442\u043E\u0435 \u0423\u043B\u0443\u0447\u0448\u0435\u043D\u0438\u0435"
   _isUnitUpgrade: 0
   _isAccountUpgrade: 0
   _isUnlockUnit: 0

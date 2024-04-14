@@ -1,3 +1,5 @@
+using CodeBase.Config;
+
 namespace CodeBase.Infrastructure.State
 {
     public interface IState : IExitableState
@@ -9,6 +11,7 @@ namespace CodeBase.Infrastructure.State
     {
         void Enter(TPayload payload);
     }
+    
     
     public interface IExitableState
     {

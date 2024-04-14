@@ -26,6 +26,9 @@ namespace CodeBase.Infrastructure.Factory
 
         public GameObject CreateCanvasLobby() =>
             Instantiate(AssetPath.CanvasLobbyPath);
+        
+        public GameObject CreateCanvasGamePlay() =>
+            Instantiate(AssetPath.CanvasGamePlayPath);
 
         public GameObject CreateDIContainer() => 
             Instantiate(AssetPath.DIContainerPath);

@@ -15,22 +15,20 @@ public class ShopItemHandler : MonoBehaviour
     [SerializeField] private GameObject[] _nexUpgrade;
     
     [SerializeField] private int _currenUpgradeLevel;
-    [SerializeField] private int _maxUpgradeLevel;
-    [SerializeField] private float _priceItem;
-    [SerializeField] private float _priceModifier;
+    [SerializeField] private GameObject _upgradeInfoWindow;
+
+    private UpgradeInfoWindowFiller _upgradeInfoWindowFiller;
 
     private void Start()
     {
         Init();
-        _openPurchaseWindow.onClick.AddListener(BuyItem);
+        _openPurchaseWindow.onClick.AddListener(OpenUpgradeInfoWindow);
+        _upgradeInfoWindowFiller = _upgradeInfoWindow.GetComponent<UpgradeInfoWindowFiller>();
     }
 
-    private void Init()
+    public void Init()
     {
         _currenUpgradeLevel = _upgradeInfo.CurrenUpgradeLevel;
-        _maxUpgradeLevel = _upgradeInfo.MaxUpgradeLevel;
-        _priceItem = _upgradeInfo.PriceItem;
-        _priceModifier = _upgradeInfo.PriceModifier;
 
         if (!CanBuyItem()) 
             SetMaxLevel();
@@ -38,20 +36,14 @@ public class ShopItemHandler : MonoBehaviour
         if (_currenUpgradeLevel > 0)
         {
             foreach (var upgrade in _nexUpgrade)
-            {
-                upgrade.SetActive(true);
-            }
+                if (upgrade != null) 
+                    upgrade.SetActive(true);
         }
-    }
-
-    private void BuyItem()
-    {
-        if (CanBuyItem())
+        else
         {
-            Debug.Log("Списали души за покупку");
-            _upgradeInfo.CurrenUpgradeLevel++;
-            _upgradeInfo.PriceItem *= _upgradeInfo.PriceModifier;
-            Init();
+            foreach (var upgrade in _nexUpgrade)
+                if (upgrade != null) 
+                    upgrade.SetActive(false);
         }
     }
 
@@ -62,6 +54,15 @@ public class ShopItemHandler : MonoBehaviour
         Destroy(_maxLevelIndicator);
     }
 
-    private bool CanBuyItem() => 
-        _upgradeInfo.CurrenUpgradeLevel != _upgradeInfo.MaxUpgradeLevel;
+    private void OpenUpgradeInfoWindow()
+    {
+        _upgradeInfoWindow.SetActive(true);
+        _upgradeInfoWindowFiller.Init(_upgradeInfo);
+        _upgradeInfoWindowFiller.SetButtonClickHandler(_upgradeInfo, this);
+    }
+
+    private bool CanBuyItem()
+    {
+        return _upgradeInfo.CurrenUpgradeLevel != _upgradeInfo.MaxUpgradeLevel;
+    }
 }

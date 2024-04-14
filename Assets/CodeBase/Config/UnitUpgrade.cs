@@ -1,5 +1,6 @@
 using UnityEngine;
 using CodeBase.EditorTool;
+using TMPro;
 
 namespace CodeBase.Config
 {
@@ -10,9 +11,20 @@ namespace CodeBase.Config
         [SerializeField] private int _maxUpgradeLevel;
         [SerializeField] private float _priceItem;
         [SerializeField] private float _priceModifier;
+        [SerializeField] private float _priceModifierDecrement;
+        [SerializeField, Multiline] private string _description;
 
+        
         public int MaxUpgradeLevel => _maxUpgradeLevel;
-        public float PriceModifier => _priceModifier;
+        public float PriceModifierDecrement => _priceModifierDecrement;
+
+        public string Description => _description;
+
+        public float PriceModifier
+        {
+            get => _priceModifier;
+            set => _priceModifier = value;
+        }
 
         public int CurrenUpgradeLevel
         {
