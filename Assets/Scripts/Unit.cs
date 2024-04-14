@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class Unit : MonoBehaviour
 {
-    [SerializeField] protected int _health;
+    [SerializeField] public float _health;
     [SerializeField] protected float _movementSpeed;
 
     public abstract void Move();
