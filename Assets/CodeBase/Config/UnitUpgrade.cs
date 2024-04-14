@@ -1,12 +1,31 @@
 using UnityEngine;
 using CodeBase.EditorTool;
-using UnityEngine.Serialization;
 
 namespace CodeBase.Config
 {
     [CreateAssetMenu(fileName = "UnitUpgrade", menuName = "Configs/Unit Upgrade")]
     public class UnitUpgrade : ScriptableObject
     {
+        [SerializeField] private int _currenUpgradeLevel;
+        [SerializeField] private int _maxUpgradeLevel;
+        [SerializeField] private float _priceItem;
+        [SerializeField] private float _priceModifier;
+
+        public int MaxUpgradeLevel => _maxUpgradeLevel;
+        public float PriceModifier => _priceModifier;
+
+        public int CurrenUpgradeLevel
+        {
+            get => _currenUpgradeLevel;
+            set => _currenUpgradeLevel = value;
+        }
+
+        public float PriceItem
+        {
+            get => _priceItem;
+            set => _priceItem = value;
+        }
+
         [SerializeField] private bool _isUnitUpgrade;
         [SerializeField] private bool _isAccountUpgrade;
         [SerializeField] private bool _isUnlockUnit;
