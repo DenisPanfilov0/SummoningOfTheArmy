@@ -5,7 +5,7 @@ using UnityEngine;
 
 public abstract class AllyUnit : Unit
 {
-    protected List<EnemyUnit> _enemiesInSpellRange = new List<EnemyUnit>();
+    protected List<EnemyUnit> _enemiesInAttackRange = new List<EnemyUnit>();
 
     protected void Init(float health, float movementSpeed)
     {
@@ -17,11 +17,9 @@ public abstract class AllyUnit : Unit
     {
         if (other.CompareTag("Enemy"))
         {
-            _animator.SetBool("IsAttacking", true);
-            
             _animator.SetFloat("Speed", 0);
 
-            _enemiesInSpellRange.Add(other.GetComponent<EnemyUnit>());
+            _enemiesInAttackRange.Add(other.GetComponent<EnemyUnit>());
         }
     }
 
@@ -33,7 +31,7 @@ public abstract class AllyUnit : Unit
             
             _animator.SetFloat("Speed", _movementSpeed);
 
-            _enemiesInSpellRange.Remove(other.GetComponent<EnemyUnit>());
+            _enemiesInAttackRange.Remove(other.GetComponent<EnemyUnit>());
         }
     }
 }

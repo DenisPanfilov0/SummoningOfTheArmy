@@ -8,6 +8,7 @@ public class UIController : MonoBehaviour
 {
     [SerializeField] private Button _createMageButton;
     [SerializeField] private Transform _magePrefabSpawnPosition;
+    [SerializeField] private List<UnitConfig> _configs;
 
     private void Awake()
     {
