@@ -12,10 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cf4b34b63bc474c922b183ba870f3da, type: 3}
   m_Name: Mage
   m_EditorClassIdentifier: 
-  id: 0
-  unitName: Mage
-  unitPrefab: {fileID: 0}
-  health: 10
-  movementSpeed: 1
-  damage: 10
-  healingBonus: 0
+  _id: 0
+  _unitName: 
+  _unitPrefab: {fileID: 0}
+  _movementSpeed: 0
+  _damage: 22
+  _baseDamage: 20
+  _baseHealth: 0
+  _percentageIncreaseInDamage: 10
+  _healingBonus: 0
+  _upgrade: {fileID: 11400000, guid: 3507136286ee0bb4f957b78d082b4db9, type: 2}
