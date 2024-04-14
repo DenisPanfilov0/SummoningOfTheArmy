@@ -9,11 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 54764ce99aa8450ea1fbad77d115d88e, type: 3}
   m_Name: 2
-  m_EditorClassIdentifier: Assembly-CSharp:CodeBase:HeroConfig
+  m_EditorClassIdentifier: 
   _id: 2
   _health: 2
   _damage: 2
-  _isUsedDeca: 1
+  _isUsedDeca: 0
   _image: {fileID: -4683081318535601398, guid: 9e46d4d0a2f406344994b7f827ca9a9d, type: 3}
