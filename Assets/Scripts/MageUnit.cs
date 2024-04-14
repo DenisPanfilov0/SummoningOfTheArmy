@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using UnityEngine;
 
@@ -12,12 +13,13 @@ public class MageUnit : AllyUnit, IAttackingUnit
         _attackValue = damageValue;
     }
     
+    // ReSharper disable Unity.PerformanceAnalysis
     public void Attack()
     {
         if (_enemiesInSpellRange.Count > 0)
         {
             EnemyUnit nearestEnemy = _enemiesInSpellRange.OrderBy(e => Vector3.Distance(transform.position, e.transform.position)).FirstOrDefault();
-            nearestEnemy._health -= _attackValue;
+            nearestEnemy.Health -= _attackValue;
             Debug.Log($"Маг использовал заклинание, нанеся {_attackValue} урона {nearestEnemy.name}.");
         }
         else
@@ -31,7 +33,7 @@ public class MageUnit : AllyUnit, IAttackingUnit
     {
         if (_enemiesInSpellRange.Count == 0)
         {
-            transform.Translate(Vector3.right * _movementSpeed * Time.deltaTime);
+            transform.Translate(Vector3.right * (_movementSpeed * Time.deltaTime));
         }
         else
         {

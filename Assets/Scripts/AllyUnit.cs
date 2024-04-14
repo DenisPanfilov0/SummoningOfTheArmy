@@ -13,16 +13,14 @@ public abstract class AllyUnit : Unit
         _movementSpeed = movementSpeed;
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        throw new NotImplementedException();
-    }
-
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("ЗАШЛИ");
         if (other.CompareTag("Enemy"))
         {
+            _animator.SetBool("IsAttacking", true);
+            
+            _animator.SetFloat("Speed", 0);
+
             _enemiesInSpellRange.Add(other.GetComponent<EnemyUnit>());
         }
     }
@@ -31,6 +29,10 @@ public abstract class AllyUnit : Unit
     {
         if (other.CompareTag("Enemy"))
         {
+            _animator.SetBool("IsAttacking", false);
+            
+            _animator.SetFloat("Speed", _movementSpeed);
+
             _enemiesInSpellRange.Remove(other.GetComponent<EnemyUnit>());
         }
     }
