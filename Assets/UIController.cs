@@ -13,11 +13,11 @@ public class UIController : MonoBehaviour
     {
         _createMageButton.onClick.AddListener(CreateMage);
     }
-
+    
     private void CreateMage()
     {
-        AllyCreator creator = new MageCreator();
+        var mageConfig = Resources.Load<MageConfig>("Configs/Units/MageConfig");
+        AllyCreator creator = new MageCreator(mageConfig);
         MageUnit mageUnitUnit = (MageUnit)creator.FactoryMethod(_magePrefabSpawnPosition);
-        //mageUnitUnit.Attack();
     }
 }

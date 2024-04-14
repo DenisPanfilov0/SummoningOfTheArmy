@@ -7,7 +7,7 @@ public abstract class AllyUnit : Unit
 {
     protected List<EnemyUnit> _enemiesInSpellRange = new List<EnemyUnit>();
 
-    protected void Init(int health, float movementSpeed)
+    protected void Init(float health, float movementSpeed)
     {
         _health = health;
         _movementSpeed = movementSpeed;

@@ -1,32 +1,29 @@
-using System;
 using System.Linq;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class MageUnit : AllyUnit, IAttackingUnit
 {
-    [SerializeField] private float _attackValue;
-    [SerializeField] private float _spellRadius;
+    private float _attackValue;
+    private float _attachSpeed;
 
-    public void Init(int healt, float movementSpeed, float damageValue, float spellRadius)
+    public void Init(float healt, float movementSpeed, float damageValue)
     {
         Init(healt, movementSpeed);
         _attackValue = damageValue;
-        _spellRadius = spellRadius;
     }
     
     public void Attack()
     {
-        
         if (_enemiesInSpellRange.Count > 0)
         {
             EnemyUnit nearestEnemy = _enemiesInSpellRange.OrderBy(e => Vector3.Distance(transform.position, e.transform.position)).FirstOrDefault();
             nearestEnemy._health -= _attackValue;
-            Debug.Log($"Маг использовал заклинание, нанеся {_attackValue * 0.5f} урона {nearestEnemy.name}.");
+            Debug.Log($"Маг использовал заклинание, нанеся {_attackValue} урона {nearestEnemy.name}.");
         }
         else
         {
             Debug.Log("Нет врагов в радиусе заклинания мага.");
+            Move();
         }
     }
 
@@ -39,12 +36,12 @@ public class MageUnit : AllyUnit, IAttackingUnit
         else
         {
             transform.position = transform.position;
+            Attack();
         }
     }
 
     private void Update()
     {
         Move();
-        Attack();
     }
 }

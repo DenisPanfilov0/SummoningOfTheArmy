@@ -3,12 +3,26 @@ using UnityEngine;
 
 public class MageCreator : AllyCreator
 {
+    private MageConfig _mageConfig;
+    
+    public MageCreator(MageConfig mageConfig)
+    {
+        _mageConfig = mageConfig;
+    }
+    
     public override AllyUnit FactoryMethod(Transform parent)
     {
         var assetProvider = new AssetProvider();
         var go = assetProvider.Instantiate("Prefabs/MagePrefab", parent);
         var unitComponent = go.AddComponent<MageUnit>();
-        unitComponent.Init(100, 25, 15, 0);
+        unitComponent.Init(_mageConfig.Health, _mageConfig.MovementSpeed, _mageConfig.Damage);
+        
+        var circleCollider = go.GetComponent<CircleCollider2D>();
+        if (circleCollider != null)
+        {
+            circleCollider.radius = _mageConfig.SpellRadius;
+        }
+        
         return unitComponent;
     }
 }
