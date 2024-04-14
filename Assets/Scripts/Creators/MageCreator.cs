@@ -8,7 +8,7 @@ public class MageCreator : AllyCreator
         var assetProvider = new AssetProvider();
         var go = assetProvider.Instantiate("Prefabs/MagePrefab", parent);
         var unitComponent = go.AddComponent<MageUnit>();
-        unitComponent.Init(0, 0, 0, 0, 0);
+        unitComponent.Init(100, 25, 15, 0);
         return unitComponent;
     }
 }
