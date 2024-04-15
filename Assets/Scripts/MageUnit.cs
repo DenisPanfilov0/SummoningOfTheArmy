@@ -1,50 +1,56 @@
-using System;
-using System.Linq;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class MageUnit : AllyUnit, IAttackingUnit
 {
-    [SerializeField] private float _attackValue;
-    [SerializeField] private float _spellRadius;
+    private float _attackValue;
+    private float _attackSpeed;
 
-    public void Init(int healt, float movementSpeed, float damageValue, float spellRadius)
+    private float _timeSinceLastAttack = 0f;
+
+    public void Init(float healt, float movementSpeed, float damageValue, float attackPerSecond)
     {
         Init(healt, movementSpeed);
         _attackValue = damageValue;
-        _spellRadius = spellRadius;
+        _attackSpeed = 1f / attackPerSecond;
     }
-    
+
+    // ReSharper disable Unity.PerformanceAnalysis
     public void Attack()
     {
-        
-        if (_enemiesInSpellRange.Count > 0)
+        if (_enemiesInAttackRange.Count > 0)
         {
-            EnemyUnit nearestEnemy = _enemiesInSpellRange.OrderBy(e => Vector3.Distance(transform.position, e.transform.position)).FirstOrDefault();
-            nearestEnemy._health -= _attackValue;
-            Debug.Log($"Маг использовал заклинание, нанеся {_attackValue * 0.5f} урона {nearestEnemy.name}.");
+            if (_timeSinceLastAttack >= _attackSpeed)
+            {
+                _animator.SetBool("IsAttacking", true);
+                //EnemyUnit nearestEnemy = _enemiesInAttackRange.OrderBy(e => Vector3.Distance(transform.position, e.transform.position)).FirstOrDefault();
+                //nearestEnemy.Health -= _attackValue;
+                Debug.Log($"Маг использовал заклинание, нанеся {_attackValue} урона {"" /*nearestEnemy.name*/}.");
+                _timeSinceLastAttack = 0f;
+            }
         }
         else
         {
             Debug.Log("Нет врагов в радиусе заклинания мага.");
+            Move();
         }
     }
 
     public override void Move()
     {
-        if (_enemiesInSpellRange.Count == 0)
+        if (_enemiesInAttackRange.Count == 0)
         {
-            transform.Translate(Vector3.right * _movementSpeed * Time.deltaTime);
+            transform.Translate(Vector3.right * (_movementSpeed * Time.deltaTime));
         }
         else
         {
             transform.position = transform.position;
+            Attack();
         }
     }
 
     private void Update()
     {
+        _timeSinceLastAttack += Time.unscaledDeltaTime;
         Move();
-        Attack();
     }
 }

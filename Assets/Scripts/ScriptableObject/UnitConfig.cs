@@ -17,10 +17,12 @@ public class UnitConfig : ScriptableObject
     [SerializeField] private float _damage;
     [SerializeField] private float _health;
     [SerializeField] private float _movementSpeed;
+    [SerializeField] private float _attackSpeed;
     
     public float Damage => _damage;
     public float Health => _health;
     public float MovementSpeed => _movementSpeed;
+    public float AttackSpeed => _attackSpeed;
 
 
     
