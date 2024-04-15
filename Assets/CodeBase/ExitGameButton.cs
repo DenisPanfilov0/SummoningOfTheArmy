@@ -1,10 +1,7 @@
-using System;
 using CodeBase.Infrastructure.State;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using CodeBase.EditorTool;
 
 namespace CodeBase
 {
@@ -24,8 +21,7 @@ namespace CodeBase
             _exitGame.onClick.RemoveAllListeners();
         }
 
-        [Button]
-        public void ExitGame()
+        private void ExitGame()
         {
             string currentSceneName = SceneManager.GetActiveScene().name;
 
