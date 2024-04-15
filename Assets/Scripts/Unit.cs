@@ -60,7 +60,7 @@ public abstract class Unit : MonoBehaviour
 
     public abstract void Move();
 
-    protected bool IsDead()
+    public bool IsDead()
     {
         if (_health <= 0)
         {
@@ -68,12 +68,5 @@ public abstract class Unit : MonoBehaviour
         }
 
         return false;
-    }
-    
-    private void Update()
-    {
-        if (IsDead()) Destroy(gameObject);
-        _timeSinceLastAttack += Time.unscaledDeltaTime;
-        Move();
     }
 }
