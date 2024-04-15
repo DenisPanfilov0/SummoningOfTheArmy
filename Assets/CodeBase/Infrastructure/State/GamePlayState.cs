@@ -55,26 +55,16 @@ namespace CodeBase.Infrastructure.State
             foreach (var hero in _gameDeck.Deck)
             {
                 GameObject obj = _gameFactory.CreateObject(AssetPath.HeroSlotPath, heroSlotsMenu.transform);
+
                 obj.GetComponent<ManaBasedHeroSpawner>().Init(hero, manaPoolScript);
                 
                 Transform[] childTransforms = obj.GetComponentsInChildren<Transform>(true);
 
-                bool firstIterationSkipped = false;
-
-                foreach (Transform childTransform in childTransforms)
+                Image image = childTransforms[1].GetComponent<Image>();
+                
+                if (image != null)
                 {
-                    if (!firstIterationSkipped)
-                    {
-                        firstIterationSkipped = true;
-                        continue;
-                    }
-
-                    Image image = childTransform.GetComponent<Image>();
-
-                    if (image != null)
-                    {
-                        image.sprite = hero.Image;
-                    }
+                    image.sprite = hero.Image;
                 }
                 
                 Button spawnButton = obj.GetComponent<Button>();

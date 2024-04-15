@@ -113,8 +113,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 60, y: -50}
-  m_SizeDelta: {x: 120, y: 700}
+  m_AnchoredPosition: {x: 161, y: 50}
+  m_SizeDelta: {x: 315, y: 700}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4237900276415973773
 CanvasRenderer:
@@ -137,14 +137,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.17060582, g: 0.9716981, b: 0.16958882, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -6562229050091718267, guid: 2764b55f39545ae409d22425b11c806a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -168,7 +168,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _health: 0
   _healthBar: {fileID: 5597898688631521309}
-  _portalPlayer: {fileID: 0}
+  mainPlayer: {fileID: 0}
   _damage: 10
 --- !u!61 &6009996752651389982
 BoxCollider2D:
@@ -214,7 +214,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 120, y: 700}
+  m_Size: {x: 315, y: 700}
   m_EdgeRadius: 0
 --- !u!50 &3639129226984864250
 Rigidbody2D:
@@ -276,7 +276,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: -0.22969818, y: 0}
+  m_AnchoredPosition: {x: -0.22970581, y: 0}
   m_SizeDelta: {x: -9.4551, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &8614519492124391909
@@ -312,11 +312,11 @@ RectTransform:
   - {fileID: 7040604614791611062}
   m_Father: {fileID: 7457266580080002689}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: 30}
-  m_SizeDelta: {x: 120, y: 50}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0.000015258789, y: 30}
+  m_SizeDelta: {x: 315, y: 50}
+  m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &5597898688631521309
 MonoBehaviour:
   m_ObjectHideFlags: 0
