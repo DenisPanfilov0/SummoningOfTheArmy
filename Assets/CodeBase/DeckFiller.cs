@@ -9,6 +9,8 @@ namespace CodeBase
 
         [SerializeField] private GameDeck _gameDeck;
 
+        [SerializeField] private Sprite _border;
+
         private void Start()
         {
             FillDeck();
@@ -20,7 +22,7 @@ namespace CodeBase
         {
             foreach (var image in _deck)
             {
-                image.sprite = null;
+                image.sprite = _border;
             }
         
             for (int i = 0; i < _gameDeck.Deck.Count; i++)
