@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9b8b7d9821e24e90acb7a15a384dac8f, type: 3}
-  m_Name: GameDeca
+  m_Name: GameDeck
   m_EditorClassIdentifier: 
   _deck: []

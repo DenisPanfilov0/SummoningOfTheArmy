@@ -1,7 +1,6 @@
 using CodeBase.Config;
 using UnityEngine;
 using UnityEngine.UI;
-using CodeBase.EditorTool;
 using CodeBase.Infrastructure.State;
 
 namespace CodeBase
@@ -34,7 +33,6 @@ namespace CodeBase
             _stateMachine = stateMachine;
         }
 
-        [Button]
         public void TakeDamage(float damage)
         {
             if (_health > damage)

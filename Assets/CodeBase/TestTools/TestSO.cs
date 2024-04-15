@@ -1,5 +1,3 @@
-using System;
-using CodeBase.EditorTool;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,7 +14,6 @@ namespace CodeBase.TestTools
             _button.onClick.AddListener(Test);
         }
 
-        [Button]
         public void Test()
         {
             Debug.Log("нажали на задний фон");

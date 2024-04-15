@@ -1,4 +1,3 @@
-using CodeBase.EditorTool;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -106,5 +105,18 @@ public class UnitConfig : ScriptableObject
     {
         _damage = (_baseDamage + _constantDamageIncrease) * (_percentageDamageIncrease / 100 + 1);
         _health = (_baseHealth + _constantHealthIncrease) * (_percentageHealthIncrease / 100 + 1);
+    }
+    
+    
+    public class ConditionalHideAttribute : PropertyAttribute {
+        public string conditionalSourceField;
+        public bool hideInInspector;
+        public bool invertCondition;
+
+        public ConditionalHideAttribute(string conditionalSourceField, bool hideInInspector = false, bool invertCondition = false) {
+            this.conditionalSourceField = conditionalSourceField;
+            this.hideInInspector = hideInInspector;
+            this.invertCondition = invertCondition;
+        }
     }
 }

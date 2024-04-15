@@ -5,7 +5,7 @@ namespace CodeBase.EditorTool
 {
     [CustomEditor(typeof(MonoBehaviour), true)]
     [CanEditMultipleObjects]
-    public class ButtonAttributeEditor : UnityEditor.Editor
+    public class ButtonAttributeEditor : Editor
     {
         public override void OnInspectorGUI()
         {
