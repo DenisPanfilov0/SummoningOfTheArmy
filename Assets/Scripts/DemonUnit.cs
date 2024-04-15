@@ -1,13 +1,13 @@
 using System.Linq;
 using UnityEngine;
 
-public class KnightUnit : AllyUnit, IAttackingUnit
+public class DemonUnit : EnemyUnit, IAttackingUnit
 {
     public override void Move()
     {
-        if (_enemiesInAttackRange.Count == 0)
+        if (_alliesInAttackRange.Count == 0)
         {
-            transform.Translate(Vector3.right * (_movementSpeed * Time.deltaTime));
+            transform.Translate(Vector3.left * (_movementSpeed * Time.deltaTime));
         }
         else
         {
@@ -15,6 +15,4 @@ public class KnightUnit : AllyUnit, IAttackingUnit
             Attack();
         }
     }
-
-    
 }

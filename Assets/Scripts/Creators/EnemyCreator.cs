@@ -4,5 +4,7 @@ using UnityEngine;
 
 public abstract class EnemyCreator
 {
-    public abstract EnemyUnit FactoryMethod();
+    protected UnitConfig _unitConfig;
+    
+    public abstract EnemyUnit FactoryMethod(Transform parent);
 }

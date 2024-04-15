@@ -1,18 +1,18 @@
 using CodeBase.Infrastructure.AssetManagement;
 using UnityEngine;
 
-public class KnightCreator : AllyCreator
+public class DemonCreator : EnemyCreator
 {
-    public KnightCreator(UnitConfig knightConfig)
+    public DemonCreator(UnitConfig demonConfig)
     {
-        _unitConfig = knightConfig;
+        _unitConfig = demonConfig;
     }
 
-    public override AllyUnit FactoryMethod(Transform parent)
+    public override EnemyUnit FactoryMethod(Transform parent)
     {
         var assetProvider = new AssetProvider();
-        var go = assetProvider.Instantiate("Prefabs/KnightPrefab", parent);
-        var unitComponent = go.AddComponent<KnightUnit>();
+        var go = assetProvider.Instantiate("Prefabs/DemonPrefab", parent);
+        var unitComponent = go.AddComponent<DemonUnit>();
         unitComponent.Init(_unitConfig.Health, _unitConfig.MovementSpeed, _unitConfig.Damage, _unitConfig.AttackSpeed, _unitConfig.AttackRadius);
         
         var circleCollider = go.GetComponent<CircleCollider2D>();
