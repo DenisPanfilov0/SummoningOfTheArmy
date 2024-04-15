@@ -12,14 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c5d755aae5247c3abca271a535142d6, type: 3}
   m_Name: Unit_2
   m_EditorClassIdentifier: 
-  _name: "\u0418 \u044D\u0442\u043E \u0432\u0441\u0451?"
+  _name: And it's all?
   _currenUpgradeLevel: 0
   _maxUpgradeLevel: 5
   _priceItem: 10
   _priceModifier: 10
   _priceModifierDecrement: 0
-  _description: "\u0423\u0432\u0435\u043B\u0438\u0447\u0438\u0432\u0430\u0435\u0442
-    \u0425\u041F \u043F\u043E\u0440\u0442\u0430\u043B\u0430"
+  _description: Increases the portal's health points.
   _isUnitUpgrade: 0
   _isAccountUpgrade: 1
   _isUnlockUnit: 0
