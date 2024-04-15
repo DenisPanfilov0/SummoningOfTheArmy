@@ -164,6 +164,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gameDeck: {fileID: 11400000, guid: f900411f51c1c294ca11814722bdaf70, type: 2}
+  _portalPlayer: {fileID: 11400000, guid: 88856bcbb4536124e9e2a1458701c0bf, type: 2}
 --- !u!1 &184337671
 GameObject:
   m_ObjectHideFlags: 0

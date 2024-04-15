@@ -7,7 +7,7 @@ namespace CodeBase.Infrastructure.Factory
     {
         GameObject CreateCanvas();
         
-        GameObject CreateGrid(Transform at);
+        GameObject CreateObject(string path, Transform at);
 
         GameObject CreateCanvasLobby();
         

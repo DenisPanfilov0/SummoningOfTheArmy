@@ -6,20 +6,25 @@ namespace CodeBase.Config
     [CreateAssetMenu(fileName = "NewLevel", menuName = "Configs/New Level")]
     public class LevelConfig : ScriptableObject
     {
-        [SerializeField] private List<EnemySpawnConfig> _spawnConfig;
-
         [SerializeField] private int _currnetLevel;
+
+        [SerializeField] private float _enemyPortalHealth;
         
-        public List<EnemySpawnConfig> SpawnConfig
-        {
-            get => _spawnConfig;
-            set => _spawnConfig = value;
-        }
+        [SerializeField] private List<EnemySpawnConfig> _spawnConfig;
         
+
+        public float EnemyPortalHealth => _enemyPortalHealth;
+
         public int CurrnetLevel
         {
             get => _currnetLevel;
             set => _currnetLevel = value;
+        }
+
+        public List<EnemySpawnConfig> SpawnConfig
+        {
+            get => _spawnConfig;
+            set => _spawnConfig = value;
         }
     }
     

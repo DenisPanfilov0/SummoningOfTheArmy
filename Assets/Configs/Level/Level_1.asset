@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22652496adb542268622dfa2cdc6c19d, type: 3}
   m_Name: Level_1
   m_EditorClassIdentifier: 
+  _currnetLevel: 1
+  _enemyPortalHealth: 90
   _spawnConfig:
   - _enemy: "\u041E\u0440\u043A"
     _enemyAmount: 5
   - _enemy: "\u0412\u043E\u043B\u043A"
     _enemyAmount: 10
-  _currnetLevel: 1

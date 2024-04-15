@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: HeroCollection
   m_EditorClassIdentifier: 
   _collection:
-  - {fileID: 11400000, guid: bed81e068e3722f489ef29c106f73673, type: 2}
-  - {fileID: 11400000, guid: 0d7f93e6f81f02b449766dbc8ac272e7, type: 2}
-  - {fileID: 11400000, guid: 326ed282db03cf04bb7fa88d75b90d75, type: 2}
+  - {fileID: 11400000, guid: 9bafc910740df4744bc46015ce5f7459, type: 2}
+  - {fileID: 11400000, guid: fff3f2aa983801f44947c92060e9918e, type: 2}
+  - {fileID: 11400000, guid: 177b8b326e6e8b1469abb253c6081f75, type: 2}
