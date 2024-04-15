@@ -8,9 +8,9 @@ namespace CodeBase.Game
     {
         public readonly GameStateMachine StateMachine;
 
-        public Game(ICoroutineRunner coroutineRunner, GameDeck gameDeck, PortalPlayerConfig portalPlayer)
+        public Game(ICoroutineRunner coroutineRunner, GameDeck gameDeck, MainPlayerConfig mainPlayer)
         {
-            StateMachine = new GameStateMachine(new SceneLoader(coroutineRunner), AllServices.Container, gameDeck, portalPlayer);
+            StateMachine = new GameStateMachine(new SceneLoader(coroutineRunner), AllServices.Container, gameDeck, mainPlayer);
         }
     }
 }

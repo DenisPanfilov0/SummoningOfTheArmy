@@ -12,15 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c5d755aae5247c3abca271a535142d6, type: 3}
   m_Name: Unit_2
   m_EditorClassIdentifier: 
+  _name: "\u041C\u043E\u0439 \u0434\u043E\u043C - \u043C\u043E\u044F \u043A\u0440\u0435\u043F\u043E\u0441\u0442\u044C"
   _currenUpgradeLevel: 0
   _maxUpgradeLevel: 5
   _priceItem: 10
-  _priceModifier: 20
+  _priceModifier: 10
   _priceModifierDecrement: 0
-  _description: "\u0412\u0442\u043E\u0440\u043E\u0435 \u0443\u043B\u0443\u0447\u0448\u0435\u043D\u0438\u0435"
+  _description: "\u0423\u0432\u0435\u043B\u0438\u0447\u0438\u0432\u0430\u0435\u0442
+    \u0425\u041F \u043F\u043E\u0440\u0442\u0430\u043B\u0430"
   _isUnitUpgrade: 0
-  _isAccountUpgrade: 0
+  _isAccountUpgrade: 1
   _isUnlockUnit: 0
   _unitUpgradeStat:
     _unitConfig: {fileID: 0}
     _healthIncrease: 0
+    _damageIncrease: 0
+  _accountUpgradeStat:
+    _healthIncrease: 10
+  _unit:
+    _config: {fileID: 0}

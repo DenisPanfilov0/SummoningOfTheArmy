@@ -15,7 +15,7 @@ namespace CodeBase.Infrastructure.State
         private IExitableState _activeState;
 
         public GameStateMachine(SceneLoader sceneLoader, AllServices services, GameDeck gameDeck,
-            PortalPlayerConfig portalPlayer)
+            MainPlayerConfig mainPlayer)
         {
             _states = new Dictionary<Type, IExitableState>
             {
@@ -23,7 +23,7 @@ namespace CodeBase.Infrastructure.State
                 [typeof(LoadLevelState)] = new LoadLevelState(this, sceneLoader, services.Single<IGameFactory>()),
                 [typeof(GamePlayState)] = new GamePlayState(this, services.Single<IGameFactory>(), gameDeck),
                 [typeof(MainMenuState)] = new MainMenuState(this, sceneLoader, services.Single<IGameFactory>()),
-                [typeof(LobbyState)] = new LobbyState(this, sceneLoader, gameDeck, services.Single<IGameFactory>(), services.Single<IAssets>(), portalPlayer),
+                [typeof(LobbyState)] = new LobbyState(this, sceneLoader, gameDeck, services.Single<IGameFactory>(), services.Single<IAssets>(), mainPlayer),
             };
         }
 

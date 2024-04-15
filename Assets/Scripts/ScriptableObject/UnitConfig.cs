@@ -94,8 +94,15 @@ public class UnitConfig : ScriptableObject
 
     //[SerializeField] private UpgradeConfig _upgrade;
 
-    public void DamageCalculated()
+    public void ConstantStatIncrease(float damage = 0, float health = 0)
     {
+        _constantDamageIncrease += damage;
+        _constantHealthIncrease += health;
+    }
+    
+    public void StatsCalculate()
+    {
+        _damage = (_baseDamage + _constantDamageIncrease) * (_percentageDamageIncrease / 100 + 1);
         _health = (_baseHealth + _constantHealthIncrease) * (_percentageHealthIncrease / 100 + 1);
     }
 }

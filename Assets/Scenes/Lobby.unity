@@ -373,13 +373,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 712555525239065999, guid: d46f563e97d672b4eb21d228cdafbaee, type: 3}
+      propertyPath: _nexUpgrade.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1739122473901976064, guid: d46f563e97d672b4eb21d228cdafbaee, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 56
+      objectReference: {fileID: 0}
+    - target: {fileID: 1739122473901976064, guid: d46f563e97d672b4eb21d228cdafbaee, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 99
+      objectReference: {fileID: 0}
     - target: {fileID: 4689235549765205800, guid: d46f563e97d672b4eb21d228cdafbaee, type: 3}
       propertyPath: m_Name
       value: CanvasLobby
       objectReference: {fileID: 0}
     - target: {fileID: 4689235549765205800, guid: d46f563e97d672b4eb21d228cdafbaee, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7073480655891881163, guid: d46f563e97d672b4eb21d228cdafbaee, type: 3}
       propertyPath: m_Pivot.x
@@ -460,6 +472,26 @@ PrefabInstance:
     - target: {fileID: 7073480655891881163, guid: d46f563e97d672b4eb21d228cdafbaee, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7878536483680017392, guid: d46f563e97d672b4eb21d228cdafbaee, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 3384493420599841878, guid: 5f2cc183671f1604384b9a083d996a39, type: 3}
+    - target: {fileID: 8015421660453383725, guid: d46f563e97d672b4eb21d228cdafbaee, type: 3}
+      propertyPath: _heroCollection
+      value: 
+      objectReference: {fileID: 11400000, guid: 50aed19844898e846a7f4af245205651, type: 2}
+    - target: {fileID: 8015421660453383725, guid: d46f563e97d672b4eb21d228cdafbaee, type: 3}
+      propertyPath: _mainPlayerConfig
+      value: 
+      objectReference: {fileID: 11400000, guid: 88856bcbb4536124e9e2a1458701c0bf, type: 2}
+    - target: {fileID: 8102886725799793432, guid: d46f563e97d672b4eb21d228cdafbaee, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8633730008681012531, guid: d46f563e97d672b4eb21d228cdafbaee, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
