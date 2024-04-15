@@ -23,6 +23,11 @@ namespace CodeBase.Infrastructure.State
             _manaRegeneration = config.ManaRegeneration;
         }
 
+        public void DecreaseMana(float count)
+        {
+            CurrentMana -= count;
+        }
+
         private void Update()
         {
             // Увеличиваем текущее значение маны на скорость регенерации
