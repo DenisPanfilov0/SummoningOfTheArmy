@@ -1,7 +1,6 @@
-using System.Linq;
 using UnityEngine;
 
-public class MageUnit : AllyUnit, IAttackingUnit
+public class KnightUnit : AllyUnit, IAttackingUnit
 {
     // ReSharper disable Unity.PerformanceAnalysis
     public void Attack()
@@ -14,13 +13,13 @@ public class MageUnit : AllyUnit, IAttackingUnit
 
                 //EnemyUnit nearestEnemy = _enemiesInAttackRange.OrderBy(e => Vector3.Distance(transform.position, e.transform.position)).FirstOrDefault();
                 //nearestEnemy.Health -= _damageValue;
-                Debug.Log($"Маг использовал заклинание, нанеся {_damageValue} урона {"" /*nearestEnemy.name*/}.");
+                Debug.Log($"{name} использовал атаку, нанеся {_damageValue} урона {"" /*nearestEnemy.name*/}.");
                 _timeSinceLastAttack = 0f;
             }
         }
         else
         {
-            Debug.Log("Нет врагов в радиусе заклинания мага.");
+            Debug.Log($"Нет врагов в радиусе атаки {name}.");
             Move();
         }
     }

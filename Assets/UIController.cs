@@ -12,13 +12,20 @@ public class UIController : MonoBehaviour
 
     private void Awake()
     {
-        _createMageButton.onClick.AddListener(CreateMage);
+        _createMageButton.onClick.AddListener(CreateKnight);
     }
     
     private void CreateMage()
     {
-        var mageConfig = Resources.Load<MageConfig>("Configs/Units/MageConfig");
+        var mageConfig = Resources.Load<UnitConfig>("Configs/Units/MageConfig");
         AllyCreator creator = new MageCreator(mageConfig);
-        MageUnit mageUnitUnit = (MageUnit)creator.FactoryMethod(_magePrefabSpawnPosition);
+        MageUnit mageUnit = (MageUnit)creator.FactoryMethod(_magePrefabSpawnPosition);
+    }
+
+    private void CreateKnight()
+    {
+        var knightConfig = Resources.Load<UnitConfig>("Configs/Units/KnightConfig");
+        AllyCreator creator = new KnightCreator(knightConfig);
+        KnightUnit knightUnit = (KnightUnit)creator.FactoryMethod(_magePrefabSpawnPosition);
     }
 }

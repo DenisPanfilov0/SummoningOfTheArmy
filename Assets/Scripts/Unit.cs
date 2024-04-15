@@ -6,7 +6,11 @@ public abstract class Unit : MonoBehaviour
 {
     protected float _health;
     protected float _movementSpeed;
+    protected float _damageValue;
+    protected float _attackSpeed;
     protected Animator _animator;
+
+    protected float _timeSinceLastAttack = 0f;
 
     public float Health
     {
@@ -20,6 +24,12 @@ public abstract class Unit : MonoBehaviour
         set => _movementSpeed = value;
     }
 
+    public float AttackSpeed
+    {
+        get => _attackSpeed;
+        set => _attackSpeed = value;
+    }
+
     public Animator Animator
     {
         get => _animator;
@@ -29,6 +39,14 @@ public abstract class Unit : MonoBehaviour
     protected void Start()
     {
         _animator = gameObject.GetComponent<Animator>();
+    }
+    
+    public void Init(float health, float movementSpeed, float damageValue, float attackPerSecond)
+    {
+        _health = health;
+        _movementSpeed = movementSpeed;
+        _damageValue = damageValue;
+        _attackSpeed = 1f / attackPerSecond;
     }
 
     public abstract void Move();

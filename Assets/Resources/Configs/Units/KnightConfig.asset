@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0cf4b34b63bc474c922b183ba870f3da, type: 3}
-  m_Name: MageConfig
+  m_Name: KnightConfig
   m_EditorClassIdentifier: 
-  _id: 0
-  _unitName: Mage
-  _unitSprite: {fileID: 3234629978573100161, guid: 5f2cc183671f1604384b9a083d996a39, type: 3}
-  _damage: 25
+  _id: 1
+  _unitName: Knight
+  _unitSprite: {fileID: 4723107735738678597, guid: 3f2e0d32624f2cf418f1759d2970d2fe, type: 3}
+  _damage: 10
   _health: 100
   _movementSpeed: 50
-  _attackSpeed: 0.25
-  _attackRadius: 250
+  _attackSpeed: 0.5
+  _attackRadius: 50
   _isBaseStats: 1
-  _baseDamage: 25
+  _baseDamage: 10
   _baseHealth: 100
   _isConstantStats: 0
   _constantDamageIncrease: 0
