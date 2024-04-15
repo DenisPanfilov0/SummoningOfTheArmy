@@ -20,16 +20,23 @@ namespace CodeBase
             _text.text = text;
             _stateMachine = stateMachine;
             _button.onClick.AddListener(FinishGame);
+            PauseGame();
         }
 
         private void FinishGame()
         {
+            Time.timeScale = 1f;
             _stateMachine.Enter<LoadLevelState, string>(Constants.LobbySceneName);
         }
 
         private void OnDestroy()
         {
             _button.onClick.RemoveAllListeners();
+        }
+
+        private void PauseGame()
+        {
+            Time.timeScale = 0f;
         }
     }
 }
