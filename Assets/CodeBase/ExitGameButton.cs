@@ -8,7 +8,7 @@ using CodeBase.EditorTool;
 
 namespace CodeBase
 {
-    public class ExitGamePlayState : MonoBehaviour
+    public class ExitGameButton : MonoBehaviour
     {
         [SerializeField] private Button _exitGame;
         [SerializeField] private GameStateMachine _stateMachine;
