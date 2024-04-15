@@ -130,7 +130,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      leonardo-lindoso-altar01_0: 4558484378229243046
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

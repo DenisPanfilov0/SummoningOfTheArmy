@@ -33,11 +33,11 @@ namespace CodeBase
         }
 
         [Button]
-        public void TakeDamage()
+        public void TakeDamage(float damage)
         {
-            if (_health > _damage)
+            if (_health > damage)
             {
-                _health -= _damage;
+                _health -= damage;
             }
             else
             {

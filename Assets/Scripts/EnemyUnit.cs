@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using CodeBase;
 using UnityEngine;
 
 public class EnemyUnit : Unit
 {
     protected List<AllyUnit> _alliesInAttackRange = new List<AllyUnit>();
+    
+    private HeroPortalHandler _enemyBase;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -15,6 +18,12 @@ public class EnemyUnit : Unit
             _animator.SetFloat("Speed", 0);
 
             _alliesInAttackRange.Add(other.GetComponent<AllyUnit>());
+        }
+        else if (other.CompareTag("AllyBase"))
+        {
+            _animator.SetFloat("Speed", 0);
+            _enemyBase = other.GetComponent<HeroPortalHandler>();
+            Attack();
         }
     }
 
@@ -33,21 +42,18 @@ public class EnemyUnit : Unit
         }
     }
     
+    // ReSharper disable Unity.PerformanceAnalysis
     public void Attack()
     {
         CheckForNewEnemies();
         
         if (_alliesInAttackRange.Count > 0)
         {
-            if (_timeSinceLastAttack >= _attackSpeed)
-            {
-                _animator.SetBool("IsAttacking", true);
-
-                AllyUnit nearestEnemy = _alliesInAttackRange.OrderBy(e => Vector3.Distance(transform.position, e.transform.position)).FirstOrDefault();
-                nearestEnemy.Health -= _damageValue;
-                Debug.Log($"{name} использовал атаку, нанеся {_damageValue} урона {nearestEnemy.name}.");
-                _timeSinceLastAttack = 0f;
-            }
+            AttackNearestEnemy();
+        }
+        else if (_enemyBase != null)
+        {
+            AttackEnemyBase();
         }
         else
         {
@@ -56,9 +62,35 @@ public class EnemyUnit : Unit
         }
     }
     
+    private void AttackEnemyBase()
+    {
+        if (_timeSinceLastAttack >= _attackSpeed)
+        {
+            _animator.SetBool("IsAttacking", true);
+
+            _enemyBase.TakeDamage(_damageValue);
+            Debug.Log($"{name} использовал атаку, нанеся {_damageValue} урона вражеской базе.");
+            _timeSinceLastAttack = 0f;
+        }
+    }
+    
+    private void AttackNearestEnemy()
+    {
+        if (_timeSinceLastAttack >= _attackSpeed)
+        {
+            _animator.SetBool("IsAttacking", true);
+
+            AllyUnit nearestEnemy = _alliesInAttackRange
+                .OrderBy(e => Vector3.Distance(transform.position, e.transform.position)).FirstOrDefault();
+            nearestEnemy.Health -= _damageValue;
+            Debug.Log($"{name} использовал атаку, нанеся {_damageValue} урона {nearestEnemy.name}.");
+            _timeSinceLastAttack = 0f;
+        }
+    }
+    
     public override void Move()
     {
-        if (_alliesInAttackRange.Count == 0)
+        if (_alliesInAttackRange.Count == 0 && _enemyBase == null) 
         {
             // transform.Translate(Vector3.left * (_movementSpeed * Time.deltaTime));
             if (transform.rotation.y != 0)
@@ -84,7 +116,7 @@ public class EnemyUnit : Unit
 
         _alliesInAttackRange.RemoveAll(e => e == null || e.IsDead());
 
-        if (_alliesInAttackRange.Count == 0)
+        if (_alliesInAttackRange.Count == 0 && _enemyBase == null)
         {
             Move();
         }
