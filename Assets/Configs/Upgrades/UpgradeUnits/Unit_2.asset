@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c5d755aae5247c3abca271a535142d6, type: 3}
   m_Name: Unit_2
   m_EditorClassIdentifier: 
-  _name: "\u041C\u043E\u0439 \u0434\u043E\u043C - \u043C\u043E\u044F \u043A\u0440\u0435\u043F\u043E\u0441\u0442\u044C"
+  _name: "\u0418 \u044D\u0442\u043E \u0432\u0441\u0451?"
   _currenUpgradeLevel: 0
   _maxUpgradeLevel: 5
   _priceItem: 10
