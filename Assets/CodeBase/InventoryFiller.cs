@@ -56,7 +56,7 @@ namespace CodeBase
             _currentHero = hero;
             _currentHeroConfig = heroConfig;
             
-            _currentHero.GetComponent<Image>().color = Color.blue;
+            _currentHero.GetComponent<Image>().color = Color.grey;
 
             if (heroConfig.IsUsedDeca)
                 SetInteractableButtons(false, true);
