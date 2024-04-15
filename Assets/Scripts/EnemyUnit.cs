@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public abstract class EnemyUnit : Unit
+public class EnemyUnit : Unit
 {
     protected List<AllyUnit> _alliesInAttackRange = new List<AllyUnit>();
 
@@ -60,7 +60,15 @@ public abstract class EnemyUnit : Unit
     {
         if (_alliesInAttackRange.Count == 0)
         {
-            transform.Translate(Vector3.left * (_movementSpeed * Time.deltaTime));
+            // transform.Translate(Vector3.left * (_movementSpeed * Time.deltaTime));
+            if (transform.rotation.y != 0)
+            {
+                transform.Translate(Vector3.right * (_movementSpeed * Time.deltaTime));
+            }
+            else
+            {
+                transform.Translate(Vector3.left * (_movementSpeed * Time.deltaTime));
+            }
         }
         else
         {

@@ -48,7 +48,7 @@ namespace CodeBase
                 
                 _endGameWindow.SetActive(true);
                 EndGameHandler gameHandler = _endGameWindow.GetComponent<EndGameHandler>();
-                gameHandler.Init(_stateMachine, "You Wind");
+                gameHandler.Init(_stateMachine, "You Lose"); 
             }
 
             UpdateView();

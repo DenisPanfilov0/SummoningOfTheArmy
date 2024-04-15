@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _id: 1
   _unitName: Knight
-  _unitSprite: {fileID: 4723107735738678597, guid: 3f2e0d32624f2cf418f1759d2970d2fe, type: 3}
+  _image: {fileID: 4723107735738678597, guid: 3f2e0d32624f2cf418f1759d2970d2fe, type: 3}
+  _isUsedDeca: 0
   _damage: 10
   _health: 100
   _movementSpeed: 50

@@ -26,7 +26,9 @@ namespace CodeBase.Infrastructure.AssetManagement
         
         public const string EnemyPortalPath = "UI/EnemyPortal";
         
-        public const string SpawnPointsPath = "UI/SpawnPoint";
+        public const string HeroSpawnPointPath = "UI/HeroSpawnPoint";
+        
+        public const string EnemySpawnPointPath = "UI/EnemySpawnPoint";
         
         public const string HeroSlotsMenuPath = "UI/HeroSlotsMenu";
         

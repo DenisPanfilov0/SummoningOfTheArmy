@@ -33,12 +33,15 @@ namespace CodeBase.Config
     public class EnemySpawnConfig
     {
         [Header("Здесь ссылка на конкретный SO врага")] 
-        [SerializeField] private string _enemy;
+        [SerializeField] private UnitConfig _enemy;
 
         [Header("Количество этих врагов")]
         [SerializeField] private int _enemyAmount;
         
-        public string Enemy
+        [Header("Задержка между спавном врагов одной группые")]
+        [SerializeField] private int _enemySpawnRate;
+        
+        public UnitConfig Enemy
         {
             get => _enemy;
             set => _enemy = value;
@@ -48,6 +51,12 @@ namespace CodeBase.Config
         {
             get => _enemyAmount;
             set => _enemyAmount = value;
+        }
+        
+        public int EnemySpawnRate
+        {
+            get => _enemySpawnRate;
+            set => _enemySpawnRate = value;
         }
     }
 }

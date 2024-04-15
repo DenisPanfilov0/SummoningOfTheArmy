@@ -3,6 +3,7 @@ using CodeBase.Infrastructure.AssetManagement;
 using CodeBase.Infrastructure.Factory;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 namespace CodeBase.Infrastructure.State
 {
@@ -28,6 +29,7 @@ namespace CodeBase.Infrastructure.State
             PortalPlayerConfig portalPlayer = diContainer.PortalPlayer;
             
             GameObject canvas = _gameFactory.CreateCanvasGamePlay();
+            UIController uiController = canvas.GetComponent<UIController>();
 
             GameObject endGameWindow = _gameFactory.CreateObject(AssetPath.EndGameWindowPath, canvas.transform);
 
@@ -38,13 +40,20 @@ namespace CodeBase.Infrastructure.State
             enemyPortal.GetComponent<EnemyPortalHandler>().Init(config, endGameWindow, _stateMachine);
             
             GameObject heroSlotsMenu = _gameFactory.CreateObject(AssetPath.HeroSlotsMenuPath, canvas.transform);
+            
+            GameObject heroSpawnPoints = _gameFactory.CreateObject(AssetPath.HeroSpawnPointPath, canvas.transform);
+            GameObject enemySpawnPoints = _gameFactory.CreateObject(AssetPath.EnemySpawnPointPath, canvas.transform);
+            
+            uiController.InitSpawnPoint(heroSpawnPoints.transform, enemySpawnPoints.transform, config);
 
             foreach (var hero in _gameDeck.Deck)
             {
                 GameObject obj = _gameFactory.CreateObject(AssetPath.HeroSlotPath, heroSlotsMenu.transform);
+                Button spawnButton = obj.GetComponent<Button>();
+                uiController.AddListenerButton(spawnButton, hero);
             }
             
-            GameObject spawnPoints = _gameFactory.CreateObject(AssetPath.SpawnPointsPath, canvas.transform);
+            
             
             endGameWindow.transform.SetAsLastSibling();
             

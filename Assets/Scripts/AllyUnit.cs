@@ -2,9 +2,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using CodeBase;
 using UnityEngine;
 
-public abstract class AllyUnit : Unit
+public class AllyUnit : Unit
 {
     protected List<EnemyUnit> _enemiesInAttackRange = new List<EnemyUnit>();
 
@@ -55,7 +56,6 @@ public abstract class AllyUnit : Unit
         }
         else
         {
-            Debug.Log($"Нет врагов в радиусе атаки {name}.");
             Move();
         }
     }
@@ -64,7 +64,14 @@ public abstract class AllyUnit : Unit
     {
         if (_enemiesInAttackRange.Count == 0)
         {
-            transform.Translate(Vector3.right * (_movementSpeed * Time.deltaTime));
+            if (transform.rotation.y != 0)
+            {
+                transform.Translate(Vector3.left * (_movementSpeed * Time.deltaTime));
+            }
+            else
+            {
+                transform.Translate(Vector3.right * (_movementSpeed * Time.deltaTime));
+            }
         }
         else
         {

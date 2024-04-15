@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Ally
   - Enemy
+  - HeroSpawnPoint
+  - EnemyBase
   layers:
   - Default
   - TransparentFX

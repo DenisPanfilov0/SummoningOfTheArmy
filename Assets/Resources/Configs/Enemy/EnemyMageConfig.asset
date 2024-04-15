@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0cf4b34b63bc474c922b183ba870f3da, type: 3}
-  m_Name: MageConfig
+  m_Name: EnemyMageConfig
   m_EditorClassIdentifier: 
   _id: 0
   _unitName: Mage

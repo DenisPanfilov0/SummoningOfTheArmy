@@ -33,11 +33,11 @@ namespace CodeBase
         }
 
         [Button]
-        public void TakeDamage()
+        public void TakeDamage(float damage)
         {
-            if (_health > _damage)
+            if (_health > damage)
             {
-                _health -= _damage;
+                _health -= damage;
             }
             else
             {
@@ -49,7 +49,7 @@ namespace CodeBase
                 
                 _endGameWindow.SetActive(true);
                 EndGameHandler gameHandler = _endGameWindow.GetComponent<EndGameHandler>();
-                gameHandler.Init(_stateMachine, "You Lose");
+                gameHandler.Init(_stateMachine, "You Win");
             }
 
             UpdateView();
