@@ -5,7 +5,7 @@ namespace CodeBase
 {
     public class Hero : MonoBehaviour
     {
-        [SerializeField] private HeroConfig _config;
+        [SerializeField] private UnitConfig _config;
 
         [SerializeField] private Button _selectHero;
 
@@ -13,7 +13,7 @@ namespace CodeBase
 
         private Outline _outline;
 
-        public HeroConfig Config
+        public UnitConfig Config
         {
             get => _config;
             set => _config = value;

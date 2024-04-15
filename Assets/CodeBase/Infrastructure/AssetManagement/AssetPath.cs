@@ -21,5 +21,17 @@ namespace CodeBase.Infrastructure.AssetManagement
         public const string CanvasGamePlayPath = "UI/CanvasGamePlay";
         
         public const string DIContainerPath = "Container/DIContainer";
+        
+        public const string HeroPortalPath = "UI/HeroPortal";
+        
+        public const string EnemyPortalPath = "UI/EnemyPortal";
+        
+        public const string SpawnPointsPath = "UI/SpawnPoint";
+        
+        public const string HeroSlotsMenuPath = "UI/HeroSlotsMenu";
+        
+        public const string HeroSlotPath = "UI/HeroSlot";
+        
+        public const string EndGameWindowPath = "UI/EndGameWindow";
     }
 }

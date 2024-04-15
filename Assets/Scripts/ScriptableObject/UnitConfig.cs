@@ -1,15 +1,24 @@
 using CodeBase.EditorTool;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 [CreateAssetMenu(fileName = "UnitConfig", menuName = "Configs/Unit Config", order = 1)]
 public class UnitConfig : ScriptableObject
 {
     [SerializeField] private int _id;
     [SerializeField] private string _unitName;
-    [SerializeField] private Sprite _unitSprite;
+    [SerializeField] private Sprite _image;
+    [SerializeField] private bool _isUsedDeca;
+
     
-    public int ID => _id;
-    public Sprite UnitSprite => _unitSprite;
+    public int Id => _id;
+    public Sprite Image => _image;
+    
+    public bool IsUsedDeca
+    {
+        get => _isUsedDeca;
+        set => _isUsedDeca = value;
+    }
 
 
     
@@ -61,6 +70,24 @@ public class UnitConfig : ScriptableObject
 
     [ConditionalHide("_isPercentageStats", true)]
     [SerializeField] private float _percentageHealthIncrease;
+    
+    
+    
+    
+    
+    
+    
+
+    //public Sprite Image => _image;
+
+    /*public HeroConfig(int id = 0, int health = 0, int damage = 0)
+    {
+        _id = id;
+        _health = health; 
+        _damage = damage;
+    }*/
+    
+    
 
 
     //[SerializeField] private float _healingBonus;

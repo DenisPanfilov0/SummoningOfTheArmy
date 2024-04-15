@@ -8,11 +8,13 @@ namespace CodeBase.Game
     {
         [SerializeField] private GameDeck _gameDeck;
         
+        [SerializeField] private PortalPlayerConfig _portalPlayer;
+
         public Game _game;
 
         private void Awake()
         {
-            _game = new Game(this, _gameDeck);
+            _game = new Game(this, _gameDeck, _portalPlayer);
             
             _game.StateMachine.Enter<BootstrapState>();
             

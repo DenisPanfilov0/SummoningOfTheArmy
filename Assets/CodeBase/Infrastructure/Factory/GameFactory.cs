@@ -21,8 +21,8 @@ namespace CodeBase.Infrastructure.Factory
         public GameObject CreateCanvas() => 
             Instantiate(AssetPath.CanvasPath);
 
-        public GameObject CreateGrid(Transform at) => 
-            Instantiate(AssetPath.GridPath, at);
+        public GameObject CreateObject(string path, Transform at) => 
+            Instantiate(path, at);
 
         public GameObject CreateCanvasLobby() =>
             Instantiate(AssetPath.CanvasLobbyPath);

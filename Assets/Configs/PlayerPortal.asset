@@ -9,9 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b8b7d9821e24e90acb7a15a384dac8f, type: 3}
-  m_Name: GameDeca
+  m_Script: {fileID: 11500000, guid: e9f35db312ed411495b66ef49fc225aa, type: 3}
+  m_Name: PlayerPortal
   m_EditorClassIdentifier: 
-  _deck:
-  - {fileID: 11400000, guid: 9bafc910740df4744bc46015ce5f7459, type: 2}
-  - {fileID: 11400000, guid: fff3f2aa983801f44947c92060e9918e, type: 2}
+  _portalHealth: 110

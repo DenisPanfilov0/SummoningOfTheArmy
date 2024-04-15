@@ -16,7 +16,7 @@ namespace CodeBase
 
         [SerializeField] private GameObject _heroPrefab;
 
-        [SerializeField] private HeroConfig _currentHeroConfig;
+        [SerializeField] private UnitConfig _currentHeroConfig;
 
         [SerializeField] private Button _equipAHero;
 
@@ -46,7 +46,7 @@ namespace CodeBase
             }
         }
 
-        private void SelectHero(HeroConfig heroConfig, Hero hero)
+        private void SelectHero(UnitConfig heroConfig, Hero hero)
         {
             if (_currentHero != null)
             {
