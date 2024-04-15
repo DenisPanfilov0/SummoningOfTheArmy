@@ -20,6 +20,8 @@ namespace CodeBase
         private GameObject _endGameWindow;
 
         private GameStateMachine _stateMachine;
+        
+        private bool _isWin = false;
 
         public void Init(MainPlayerConfig mainPlayer, GameObject endGameWindow, GameStateMachine stateMachine)
         {
@@ -39,8 +41,9 @@ namespace CodeBase
             {
                 _health -= damage;
             }
-            else
+            else if (!_isWin)
             {
+                _isWin = true;
                 _health = 0;
                 Debug.Log("ты проиграл");
                 Debug.Log("ты проиграл");

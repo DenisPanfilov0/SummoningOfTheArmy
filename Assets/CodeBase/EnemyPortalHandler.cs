@@ -20,6 +20,8 @@ namespace CodeBase
 
         private GameStateMachine _stateMachine;
 
+        private bool _isWin = false;
+
         public void Init(LevelConfig levelConfig, GameObject endGameWindow, GameStateMachine stateMachine)
         {
             _levelConfig = levelConfig;
@@ -39,8 +41,9 @@ namespace CodeBase
             {
                 _health -= damage;
             }
-            else
+            else if (!_isWin)
             {
+                _isWin = true;
                 _health = 0;
                 Debug.Log("Ты Выиграл этого врага");
                 Debug.Log("Ты Выиграл этого врага");

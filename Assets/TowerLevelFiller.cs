@@ -1,7 +1,5 @@
 using CodeBase;
 using CodeBase.Config;
-using CodeBase.Game;
-using CodeBase.Infrastructure.Factory;
 using CodeBase.Infrastructure.State;
 using UnityEngine;
 using UnityEngine.UI;
@@ -43,5 +41,14 @@ public class TowerLevelFiller : MonoBehaviour
         _currentLevel = level;
         FindObjectOfType<DIContainer>().Init(null, null, level);
         _stateMachine.Enter<LoadLevelState, string>(Constants.GameplaySceneName);
+    }
+    
+    private void OnDestroy()
+    {
+        foreach (var config in _levelCollection.LevelConfigs)
+        {
+            GameObject level = Instantiate(_levelPrefab, _contentParent);
+            level.GetComponent<Button>().onClick.RemoveAllListeners();
+        }
     }
 }
