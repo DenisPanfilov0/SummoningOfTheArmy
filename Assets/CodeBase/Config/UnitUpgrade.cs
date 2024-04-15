@@ -1,7 +1,4 @@
 using UnityEngine;
-using CodeBase.EditorTool;
-using TMPro;
-using UnityEngine.Serialization;
 
 namespace CodeBase.Config
 {
@@ -94,5 +91,18 @@ namespace CodeBase.Config
         [SerializeField] private UnitConfig _config;
         
         public UnitConfig Config => _config;
+    }
+    
+    
+    public class ConditionalHideAttribute : PropertyAttribute {
+        public string conditionalSourceField;
+        public bool hideInInspector;
+        public bool invertCondition;
+
+        public ConditionalHideAttribute(string conditionalSourceField, bool hideInInspector = false, bool invertCondition = false) {
+            this.conditionalSourceField = conditionalSourceField;
+            this.hideInInspector = hideInInspector;
+            this.invertCondition = invertCondition;
+        }
     }
 }

@@ -1,5 +1,4 @@
 using CodeBase.Config;
-using CodeBase.EditorTool;
 using CodeBase.Infrastructure.AssetManagement;
 using CodeBase.Infrastructure.State;
 using UnityEngine;
@@ -49,7 +48,6 @@ namespace CodeBase
             DontDestroyOnLoad(this);
         }
 
-        [Button]
         public void Printer()
         {
             Debug.Log(StateMachine);

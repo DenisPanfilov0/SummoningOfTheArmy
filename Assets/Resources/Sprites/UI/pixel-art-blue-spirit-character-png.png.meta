@@ -178,7 +178,10 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      pixel-art-blue-spirit-character-png_0: 4212891207273438625
+      pixel-art-blue-spirit-character-png_1: 3796113285968883730
+      pixel-art-blue-spirit-character-png_2: 2857663637189180755
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
