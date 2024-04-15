@@ -17,6 +17,7 @@ namespace CodeBase
         {
             _unitConfig = config;
             _manaPool = manaPool;
+            _heroSpawn.onClick.AddListener(SpawnUnit);
         }
 
         private void Update()
@@ -29,6 +30,16 @@ namespace CodeBase
             {
                 _heroSpawn.interactable = false;
             }
+        }
+
+        private void SpawnUnit()
+        {
+            _manaPool.DecreaseMana(_unitConfig.CostSummoner);
+        }
+
+        private void OnDestroy()
+        {
+            _heroSpawn.onClick.RemoveAllListeners();
         }
     }
 }

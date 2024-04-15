@@ -51,6 +51,7 @@ namespace CodeBase.Infrastructure.State
             //TODO Изменить названия
             GameObject manaPool = _gameFactory.CreateObject(AssetPath.ManaPoolPath, canvas.transform);
             ManaPoolScript manaPoolScript = manaPool.GetComponent<ManaPoolScript>();
+            manaPoolScript.Init(mainPlayer);
             
             foreach (var hero in _gameDeck.Deck)
             {
