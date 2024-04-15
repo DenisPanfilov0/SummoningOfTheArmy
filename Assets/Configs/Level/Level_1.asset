@@ -17,10 +17,13 @@ MonoBehaviour:
   _spawnConfig:
   - _enemy: {fileID: 11400000, guid: 6f0befad98d2f234bb997c0c31714b92, type: 2}
     _enemyAmount: 3
-    _enemySpawnRate: 3
+    _enemySpawnRate: 1
+    _enemyReward: 777
   - _enemy: {fileID: 11400000, guid: 5eecf680f5f274440a62ed4709b84067, type: 2}
-    _enemyAmount: 3
-    _enemySpawnRate: 5
+    _enemyAmount: 0
+    _enemySpawnRate: 0
+    _enemyReward: 0
   - _enemy: {fileID: 11400000, guid: 216ccc80e60736b4eb0ff2f65bbe5d42, type: 2}
-    _enemyAmount: 2
-    _enemySpawnRate: 7
+    _enemyAmount: 0
+    _enemySpawnRate: 0
+    _enemyReward: 0

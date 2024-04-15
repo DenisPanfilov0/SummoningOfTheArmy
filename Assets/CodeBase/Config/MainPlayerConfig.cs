@@ -1,4 +1,5 @@
 using UnityEngine;
+using System;
 
 namespace CodeBase.Config
 {
@@ -8,6 +9,8 @@ namespace CodeBase.Config
         [SerializeField] private float _portalHealth;
         
         [SerializeField] private float _balance;
+
+        public event Action IsBalanceChange;
         
         public float PortalHealth
         {
@@ -18,6 +21,7 @@ namespace CodeBase.Config
         public void IncreaseBalance(float amount)
         {
             _balance += amount;
+            IsBalanceChange?.Invoke();
         }
         
         public void DecreaseBalance(float amount)
@@ -25,6 +29,7 @@ namespace CodeBase.Config
             if (_balance >= amount)
             {
                 _balance -= amount;
+                IsBalanceChange?.Invoke();
             }
             else
             {

@@ -35,5 +35,7 @@ namespace CodeBase.Infrastructure.AssetManagement
         public const string HeroSlotPath = "UI/HeroSlot";
         
         public const string EndGameWindowPath = "UI/EndGameWindow";
+        
+        public const string BalanceUIPath = "UI/Balance";
     }
 }

@@ -227,7 +227,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1208515331
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -391,7 +391,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4689235549765205800, guid: d46f563e97d672b4eb21d228cdafbaee, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4834064996313146850, guid: d46f563e97d672b4eb21d228cdafbaee, type: 3}
+      propertyPath: _nexUpgrade.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7073480655891881163, guid: d46f563e97d672b4eb21d228cdafbaee, type: 3}
       propertyPath: m_Pivot.x
@@ -491,7 +495,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8633730008681012531, guid: d46f563e97d672b4eb21d228cdafbaee, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

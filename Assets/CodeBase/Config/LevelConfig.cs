@@ -41,6 +41,9 @@ namespace CodeBase.Config
         [Header("Задержка между спавном врагов одной группые")]
         [SerializeField] private int _enemySpawnRate;
         
+        [Header("Задержка между спавном врагов одной группые")]
+        [SerializeField] private float _enemyReward;
+        
         public UnitConfig Enemy
         {
             get => _enemy;
@@ -57,6 +60,12 @@ namespace CodeBase.Config
         {
             get => _enemySpawnRate;
             set => _enemySpawnRate = value;
+        }
+        
+        public float EnemyReward
+        {
+            get => _enemyReward;
+            set => _enemyReward = value;
         }
     }
 }

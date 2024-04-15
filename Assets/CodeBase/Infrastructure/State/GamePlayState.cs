@@ -43,8 +43,10 @@ namespace CodeBase.Infrastructure.State
             
             GameObject heroSpawnPoints = _gameFactory.CreateObject(AssetPath.HeroSpawnPointPath, canvas.transform);
             GameObject enemySpawnPoints = _gameFactory.CreateObject(AssetPath.EnemySpawnPointPath, canvas.transform);
+
+            GameObject balanceUI = _gameFactory.CreateObject(AssetPath.BalanceUIPath, canvas.transform);
             
-            uiController.InitSpawnPoint(heroSpawnPoints.transform, enemySpawnPoints.transform, config);
+            uiController.InitSpawnPoint(heroSpawnPoints.transform, enemySpawnPoints.transform, config, mainPlayer);
 
             foreach (var hero in _gameDeck.Deck)
             {
