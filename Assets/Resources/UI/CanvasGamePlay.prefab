@@ -199,6 +199,7 @@ MonoBehaviour:
   _allyPrefabSpawnPosition: {fileID: 0}
   _enemyPrefabSpawnPosition: {fileID: 0}
   _configs: []
+  _mainPlayer: {fileID: 0}
 --- !u!1 &4083871002256993008
 GameObject:
   m_ObjectHideFlags: 0
@@ -345,8 +346,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 104.539795}
-  m_SizeDelta: {x: 0, y: 209.0796}
+  m_AnchoredPosition: {x: 0, y: 110.66342}
+  m_SizeDelta: {x: 0, y: 220}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2741081536422883790
 CanvasRenderer:
