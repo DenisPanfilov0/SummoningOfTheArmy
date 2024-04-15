@@ -1,6 +1,7 @@
 using CodeBase.Config;
 using CodeBase.Infrastructure.State;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace CodeBase.Game
 {
@@ -8,13 +9,13 @@ namespace CodeBase.Game
     {
         [SerializeField] private GameDeck _gameDeck;
         
-        [SerializeField] private PortalPlayerConfig _portalPlayer;
+        [FormerlySerializedAs("_portalPlayer")] [SerializeField] private MainPlayerConfig mainPlayer;
 
         public Game _game;
 
         private void Awake()
         {
-            _game = new Game(this, _gameDeck, _portalPlayer);
+            _game = new Game(this, _gameDeck, mainPlayer);
             
             _game.StateMachine.Enter<BootstrapState>();
             

@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using CodeBase.EditorTool;
 using CodeBase.Infrastructure.State;
+using UnityEngine.Serialization;
 
 namespace CodeBase
 {
@@ -12,7 +13,7 @@ namespace CodeBase
 
         [SerializeField] private Slider _healthBar;
 
-        [SerializeField] private PortalPlayerConfig _portalPlayer;
+        [FormerlySerializedAs("_portalPlayer")] [SerializeField] private MainPlayerConfig mainPlayer;
         
         [SerializeField] private float _damage;
 
@@ -20,10 +21,10 @@ namespace CodeBase
 
         private GameStateMachine _stateMachine;
 
-        public void Init(PortalPlayerConfig portalPlayer, GameObject endGameWindow, GameStateMachine stateMachine)
+        public void Init(MainPlayerConfig mainPlayer, GameObject endGameWindow, GameStateMachine stateMachine)
         {
-            _portalPlayer = portalPlayer;
-            _health = _portalPlayer.PortalHealth;
+            this.mainPlayer = mainPlayer;
+            _health = this.mainPlayer.PortalHealth;
             _healthBar.maxValue = _health;
             _healthBar.value = _health;
 

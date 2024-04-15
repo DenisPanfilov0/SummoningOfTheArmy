@@ -26,7 +26,7 @@ namespace CodeBase.Infrastructure.State
         {
             DIContainer diContainer = GameObject.FindObjectOfType<DIContainer>();
             LevelConfig config = diContainer.CurrentLevelConfig;
-            PortalPlayerConfig portalPlayer = diContainer.PortalPlayer;
+            MainPlayerConfig mainPlayer = diContainer.MainPlayer;
             
             GameObject canvas = _gameFactory.CreateCanvasGamePlay();
             UIController uiController = canvas.GetComponent<UIController>();
@@ -34,7 +34,7 @@ namespace CodeBase.Infrastructure.State
             GameObject endGameWindow = _gameFactory.CreateObject(AssetPath.EndGameWindowPath, canvas.transform);
 
             GameObject heroPortal = _gameFactory.CreateObject(AssetPath.HeroPortalPath, canvas.transform);
-            heroPortal.GetComponent<HeroPortalHandler>().Init(portalPlayer, endGameWindow, _stateMachine);
+            heroPortal.GetComponent<HeroPortalHandler>().Init(mainPlayer, endGameWindow, _stateMachine);
 
             GameObject enemyPortal = _gameFactory.CreateObject(AssetPath.EnemyPortalPath, canvas.transform);
             enemyPortal.GetComponent<EnemyPortalHandler>().Init(config, endGameWindow, _stateMachine);

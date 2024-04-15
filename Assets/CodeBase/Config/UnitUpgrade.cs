@@ -1,12 +1,14 @@
 using UnityEngine;
 using CodeBase.EditorTool;
 using TMPro;
+using UnityEngine.Serialization;
 
 namespace CodeBase.Config
 {
     [CreateAssetMenu(fileName = "UnitUpgrade", menuName = "Configs/Unit Upgrade")]
     public class UnitUpgrade : ScriptableObject
     {
+        [SerializeField] private string _name;
         [SerializeField] private int _currenUpgradeLevel;
         [SerializeField] private int _maxUpgradeLevel;
         [SerializeField] private float _priceItem;
@@ -14,7 +16,8 @@ namespace CodeBase.Config
         [SerializeField] private float _priceModifierDecrement;
         [SerializeField, Multiline] private string _description;
 
-        
+
+        public string Name => _name;
         public int MaxUpgradeLevel => _maxUpgradeLevel;
         public float PriceModifierDecrement => _priceModifierDecrement;
 
@@ -41,15 +44,26 @@ namespace CodeBase.Config
         [SerializeField] private bool _isUnitUpgrade;
         [SerializeField] private bool _isAccountUpgrade;
         [SerializeField] private bool _isUnlockUnit;
+        
 
         [ConditionalHide("_isUnitUpgrade", true)]
         [SerializeField] private UnitUpgradeStat _unitUpgradeStat;
+        public UnitUpgradeStat UnitUpgradeCharacteristic => _unitUpgradeStat; 
+        
         
         [ConditionalHide("_isAccountUpgrade", true)]
         [SerializeField] private AccountUpgradeStat _accountUpgradeStat;
-        
+        public AccountUpgradeStat AccountUpgradeStat => _accountUpgradeStat;
+
+
         [ConditionalHide("_isUnlockUnit", true)]
-        [SerializeField] private UnitUnlock _unitUnlock;
+        [SerializeField] private UnitUnlock _unit;
+        public UnitUnlock Unit => _unit;
+        
+        
+        public bool IsUnitUpgrade => _isUnitUpgrade;
+        public bool IsAccountUpgrade => _isAccountUpgrade;
+        public bool IsUnlockUnit => _isUnlockUnit;
     }
 
     [System.Serializable]
@@ -57,15 +71,28 @@ namespace CodeBase.Config
     {
         [SerializeField] private UnitConfig _unitConfig;
         [SerializeField] private float _healthIncrease;
+        [SerializeField] private float _damageIncrease;
+
+        public UnitConfig Unit => _unitConfig;
+        public float HealthIncrease => _healthIncrease;
+        public float DamageIncrease => _damageIncrease;
     }
     
     [System.Serializable]
     public class AccountUpgradeStat
     {
+        //[SerializeField] private MainPlayerConfig _config;
+        [SerializeField] private float _healthIncrease;
+
+        //public MainPlayerConfig Config => _config;
+        public float HealthIncrease => _healthIncrease;
     }
     
     [System.Serializable]
     public class UnitUnlock
     {
+        [SerializeField] private UnitConfig _config;
+        
+        public UnitConfig Config => _config;
     }
 }

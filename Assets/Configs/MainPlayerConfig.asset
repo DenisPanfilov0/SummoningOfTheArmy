@@ -10,6 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e9f35db312ed411495b66ef49fc225aa, type: 3}
-  m_Name: PlayerPortal
+  m_Name: MainPlayerConfig
   m_EditorClassIdentifier: 
-  _portalHealth: 110
+  _portalHealth: 100
+  _balance: 9999869

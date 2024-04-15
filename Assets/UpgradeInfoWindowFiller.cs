@@ -1,4 +1,5 @@
 using System;
+using CodeBase;
 using CodeBase.Config;
 using TMPro;
 using UnityEngine;
@@ -12,6 +13,8 @@ public class UpgradeInfoWindowFiller : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _description;
     [SerializeField] private Button _upgradeButton;
     [SerializeField] private Button _closewindow;
+    [SerializeField] private MainPlayerConfig _mainPlayerConfig;
+    [SerializeField] private HeroCollection _heroCollection;
 
     private void Start()
     {
@@ -21,10 +24,23 @@ public class UpgradeInfoWindowFiller : MonoBehaviour
 
     public void Init(UnitUpgrade config, ShopItemHandler item = null)
     {
-        _name.text = config.name;
-        _cost.text = $"COST : {config.PriceItem}";
-        _level.text = $"Lv. {config.CurrenUpgradeLevel}/{config.MaxUpgradeLevel}";
-        _description.text = config.Description;
+        if (config.CurrenUpgradeLevel >= config.MaxUpgradeLevel)
+        {
+            _upgradeButton.interactable = false;
+            _level.text = "Max";
+            _name.text = config.Name;
+            _cost.text = $"COST : \u221E";
+            _description.text = config.Description;
+
+        }
+        else
+        {
+            _upgradeButton.interactable = true;
+            _name.text = config.Name;
+            _cost.text = $"COST : {config.PriceItem}";
+            _level.text = $"Lv. {config.CurrenUpgradeLevel}/{config.MaxUpgradeLevel}";
+            _description.text = config.Description;
+        }
     }
 
     public void SetButtonClickHandler(UnitUpgrade config, ShopItemHandler item)
@@ -41,11 +57,41 @@ public class UpgradeInfoWindowFiller : MonoBehaviour
 
     private void BuyUpgrade(UnitUpgrade config, ShopItemHandler item)
     {
+        if (config.IsUnitUpgrade)
+        {
+            UnitUpgrade(config);
+        }
+        else if (config.IsAccountUpgrade)
+        {
+            AccountUpgrade(config);
+        }
+        else if (config.IsUnlockUnit)
+        {
+            UnitUnlock(config);
+        }
+        
         config.CurrenUpgradeLevel++;
+        _mainPlayerConfig.DecreaseBalance(config.PriceItem);
         config.PriceItem += config.PriceModifier;
-        // config.PriceItem *= Mathf.Log(config.CurrenUpgradeLevel + 1) * config.PriceModifier;
-        //config.PriceModifier *= config.PriceModifierDecrement;
         Init(config);
         item.Init();
+    }
+
+    private void UnitUpgrade(UnitUpgrade config)
+    {
+        float damage = config.UnitUpgradeCharacteristic.DamageIncrease;
+        float health = config.UnitUpgradeCharacteristic.HealthIncrease;
+        config.UnitUpgradeCharacteristic.Unit.ConstantStatIncrease(damage, health);
+        config.UnitUpgradeCharacteristic.Unit.StatsCalculate();
+    }
+
+    private void AccountUpgrade(UnitUpgrade config)
+    {
+        _mainPlayerConfig.PortalHealth += config.AccountUpgradeStat.HealthIncrease;
+    }
+
+    private void UnitUnlock(UnitUpgrade config)
+    {
+        _heroCollection.Collection.Add(config.Unit.Config);
     }
 }

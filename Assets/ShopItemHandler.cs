@@ -63,6 +63,6 @@ public class ShopItemHandler : MonoBehaviour
 
     private bool CanBuyItem()
     {
-        return _upgradeInfo.CurrenUpgradeLevel != _upgradeInfo.MaxUpgradeLevel;
+        return _upgradeInfo.CurrenUpgradeLevel < _upgradeInfo.MaxUpgradeLevel;
     }
 }

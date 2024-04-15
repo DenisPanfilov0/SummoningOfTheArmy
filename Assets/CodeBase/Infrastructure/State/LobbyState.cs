@@ -16,17 +16,17 @@ namespace CodeBase.Infrastructure.State
         private readonly GameDeck _gameDeck;
         private readonly IGameFactory _gameFactory;
         private readonly IAssets _assets;
-        private readonly PortalPlayerConfig _portalPlayer;
+        private readonly MainPlayerConfig _mainPlayer;
 
         public LobbyState(GameStateMachine gameStateMachine, SceneLoader sceneLoader, GameDeck gameDeck,
-            IGameFactory gameFactory, IAssets assets, PortalPlayerConfig portalPlayer)
+            IGameFactory gameFactory, IAssets assets, MainPlayerConfig mainPlayer)
         {
             _gameStateMachine = gameStateMachine;
             _sceneLoader = sceneLoader;
             _gameDeck = gameDeck;
             _gameFactory = gameFactory;
             _assets = assets;
-            _portalPlayer = portalPlayer;
+            _mainPlayer = mainPlayer;
         }
 
         public void Enter()
@@ -34,7 +34,7 @@ namespace CodeBase.Infrastructure.State
             //TODO Разделить на методы
             GameObject container = _gameFactory.CreateDIContainer();
             DIContainer diContainer = container.GetComponent<DIContainer>();
-            diContainer.Init(_gameStateMachine, _assets, null, _portalPlayer, _gameDeck);
+            diContainer.Init(_gameStateMachine, _assets, null, _mainPlayer, _gameDeck);
             
             GameObject canvas = _gameFactory.CreateCanvasLobby();
             TowerLevelFiller levelFiller = canvas.GetComponentInChildren<TowerLevelFiller>();

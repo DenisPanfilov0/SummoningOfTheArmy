@@ -14,12 +14,12 @@ namespace CodeBase
         
         public LevelConfig CurrentLevelConfig { get; private set; }
 
-        public PortalPlayerConfig PortalPlayer { get; private set; }
+        public MainPlayerConfig MainPlayer { get; private set; }
 
         public GameDeck GameDeck { get; private set; }
 
         public void Init(GameStateMachine stateMachine = null, IAssets assets = null, LevelConfig levelConfig = null,
-            PortalPlayerConfig portalPlayer = null, GameDeck gameDeck = null)
+            MainPlayerConfig mainPlayer = null, GameDeck gameDeck = null)
         {
             if (stateMachine != null)
             {
@@ -36,9 +36,9 @@ namespace CodeBase
                 CurrentLevelConfig = levelConfig;
             }
             
-            if (portalPlayer != null)
+            if (mainPlayer != null)
             {
-                PortalPlayer = portalPlayer;
+                MainPlayer = mainPlayer;
             }
             
             if (gameDeck != null)
@@ -55,7 +55,7 @@ namespace CodeBase
             Debug.Log(StateMachine);
             Debug.Log(Assets);
             Debug.Log(CurrentLevelConfig);
-            Debug.Log(PortalPlayer);
+            Debug.Log(MainPlayer);
         }
         
     }
