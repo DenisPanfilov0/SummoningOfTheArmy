@@ -8,11 +8,13 @@ public class UnitConfig : ScriptableObject
     [SerializeField] private int _id;
     [SerializeField] private string _unitName;
     [SerializeField] private Sprite _image;
+    [SerializeField] private float _costSummoner;
     [SerializeField] private bool _isUsedDeca;
 
     
     public int Id => _id;
     public Sprite Image => _image;
+    public float CostSummoner => _costSummoner;
     
     public bool IsUsedDeca
     {

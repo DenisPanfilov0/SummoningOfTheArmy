@@ -1,3 +1,4 @@
+using System;
 using CodeBase.Infrastructure.State;
 using TMPro;
 using UnityEngine;
@@ -24,6 +25,11 @@ namespace CodeBase
         private void FinishGame()
         {
             _stateMachine.Enter<LoadLevelState, string>(Constants.LobbySceneName);
+        }
+
+        private void OnDestroy()
+        {
+            _button.onClick.RemoveAllListeners();
         }
     }
 }

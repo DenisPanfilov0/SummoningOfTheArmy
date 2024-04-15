@@ -15,6 +15,7 @@ MonoBehaviour:
   _id: 2
   _unitName: Demon
   _image: {fileID: 6706057316634897999, guid: 4a7b20a8dafa61d4292ce8f5271f3787, type: 3}
+  _costSummoner: 10
   _isUsedDeca: 0
   _damage: 25
   _health: 100

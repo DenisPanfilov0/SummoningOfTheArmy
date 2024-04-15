@@ -15,6 +15,7 @@ MonoBehaviour:
   _id: 0
   _unitName: Mage
   _image: {fileID: 3234629978573100161, guid: 5f2cc183671f1604384b9a083d996a39, type: 3}
+  _costSummoner: 10
   _isUsedDeca: 0
   _damage: 28
   _health: 108

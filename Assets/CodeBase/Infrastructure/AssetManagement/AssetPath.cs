@@ -37,5 +37,7 @@ namespace CodeBase.Infrastructure.AssetManagement
         public const string EndGameWindowPath = "UI/EndGameWindow";
         
         public const string BalanceUIPath = "UI/Balance";
+        
+        public const string ManaPoolPath = "UI/ManaPool";
     }
 }

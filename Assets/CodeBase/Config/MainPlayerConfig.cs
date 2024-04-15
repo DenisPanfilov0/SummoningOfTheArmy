@@ -10,7 +10,31 @@ namespace CodeBase.Config
         
         [SerializeField] private float _balance;
 
+        [SerializeField] private float _maxManaPool;
+        
+        [SerializeField] private float _startManaPool;
+
+        [SerializeField] private float _manaRegeneration;
+
         public event Action IsBalanceChange;
+        
+        public float MaxManaPool
+        {
+            get => _maxManaPool;
+            set => _maxManaPool = value;
+        }
+        
+        public float StartManaPool
+        {
+            get => _startManaPool;
+            set => _startManaPool = value;
+        }
+        
+        public float ManaRegeneration
+        {
+            get => _manaRegeneration;
+            set => _manaRegeneration = value;
+        }
         
         public float PortalHealth
         {

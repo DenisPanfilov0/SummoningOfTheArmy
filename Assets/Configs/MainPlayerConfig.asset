@@ -13,4 +13,7 @@ MonoBehaviour:
   m_Name: MainPlayerConfig
   m_EditorClassIdentifier: 
   _portalHealth: 110
-  _balance: 10000
+  _balance: 12331
+  _maxManaPool: 100
+  _startManaPool: 20
+  _manaRegeneration: 5
