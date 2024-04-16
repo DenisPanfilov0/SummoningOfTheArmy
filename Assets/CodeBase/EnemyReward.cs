@@ -12,7 +12,7 @@ public class EnemyReward : MonoBehaviour
         _mainPlayer = mainPlayer;
     }
     
-    private void OnDestroy()
+    public void ClaimReward()
     {
         _mainPlayer.IncreaseBalance(_enemyReward);
     }

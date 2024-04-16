@@ -111,7 +111,11 @@ public class EnemyUnit : Unit
     
     private void Update()
     {
-        if (IsDead()) Destroy(gameObject);
+        if (IsDead())
+        {
+            gameObject.GetComponent<EnemyReward>().ClaimReward();
+            Destroy(gameObject);
+        }
         _timeSinceLastAttack += Time.unscaledDeltaTime;
 
         _alliesInAttackRange.RemoveAll(e => e == null || e.IsDead());
