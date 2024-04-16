@@ -12,7 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22652496adb542268622dfa2cdc6c19d, type: 3}
   m_Name: Level_2
   m_EditorClassIdentifier: 
-  _spawnConfig:
-  - _enemy: "\u0413\u043D\u043E\u043C"
-    _enemyAmount: 10
   _currnetLevel: 2
+  _enemyPortalHealth: 250
+  _spawnConfig:
+  - _enemy: {fileID: 11400000, guid: 5eecf680f5f274440a62ed4709b84067, type: 2}
+    _enemyAmount: 10
+    _enemySpawnRate: 2
+    _enemyReward: 20
+  - _enemy: {fileID: 11400000, guid: 216ccc80e60736b4eb0ff2f65bbe5d42, type: 2}
+    _enemyAmount: 100
+    _enemySpawnRate: 15
+    _enemyReward: 100

@@ -10,21 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2c5d755aae5247c3abca271a535142d6, type: 3}
-  m_Name: Unit_2
+  m_Name: HP_Portal
   m_EditorClassIdentifier: 
-  _name: And it's all?
+  _name: Portal Health
   _currenUpgradeLevel: 0
   _maxUpgradeLevel: 50
   _priceItem: 10
   _priceModifier: 10
-  _priceModifierDecrement: 0
-  _description: Increases the portal's health points.
+  _priceModifierDecrement: 0.1
+  _description: Increases portal health points.
   _isUnitUpgrade: 0
   _isAccountUpgrade: 1
   _isUnlockUnit: 0
   _unitUpgradeStat:
     _unitConfig: {fileID: 0}
-    _healthIncrease: 0
+    _healthIncrease: 5
     _damageIncrease: 0
   _accountUpgradeStat:
     _healthIncrease: 10

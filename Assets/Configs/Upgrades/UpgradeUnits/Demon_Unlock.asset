@@ -10,23 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2c5d755aae5247c3abca271a535142d6, type: 3}
-  m_Name: Unit_2
+  m_Name: Demon_Unlock
   m_EditorClassIdentifier: 
-  _name: And it's all?
+  _name: Another one??
   _currenUpgradeLevel: 0
-  _maxUpgradeLevel: 50
-  _priceItem: 10
-  _priceModifier: 10
+  _maxUpgradeLevel: 1
+  _priceItem: 500
+  _priceModifier: 0
   _priceModifierDecrement: 0
-  _description: Increases the portal's health points.
+  _description: 'Unlocks a new unit: Demon'
   _isUnitUpgrade: 0
-  _isAccountUpgrade: 1
-  _isUnlockUnit: 0
+  _isAccountUpgrade: 0
+  _isUnlockUnit: 1
   _unitUpgradeStat:
     _unitConfig: {fileID: 0}
     _healthIncrease: 0
     _damageIncrease: 0
   _accountUpgradeStat:
-    _healthIncrease: 10
+    _healthIncrease: 0
   _unit:
-    _config: {fileID: 0}
+    _config: {fileID: 11400000, guid: ba2252af7484500449de049ec5075880, type: 2}

@@ -15,15 +15,16 @@ MonoBehaviour:
   _id: 2
   _unitName: Demon
   _image: {fileID: 6706057316634897999, guid: 4a7b20a8dafa61d4292ce8f5271f3787, type: 3}
+  _costSummoner: 0
   _isUsedDeca: 0
-  _damage: 25
-  _health: 100
+  _damage: 40
+  _health: 300
   _movementSpeed: 50
   _attackSpeed: 0.25
   _attackRadius: 50
   _isBaseStats: 1
-  _baseDamage: 25
-  _baseHealth: 100
+  _baseDamage: 40
+  _baseHealth: 300
   _isConstantStats: 0
   _constantDamageIncrease: 0
   _constantHealthIncrease: 0

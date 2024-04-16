@@ -15,16 +15,16 @@ MonoBehaviour:
   _id: 0
   _unitName: Mage
   _image: {fileID: 3234629978573100161, guid: 5f2cc183671f1604384b9a083d996a39, type: 3}
-  _costSummoner: 10
+  _costSummoner: 25
   _isUsedDeca: 0
-  _damage: 28
-  _health: 108
+  _damage: 15
+  _health: 60
   _movementSpeed: 50
   _attackSpeed: 0.25
-  _attackRadius: 250
+  _attackRadius: 70
   _isBaseStats: 0
-  _baseDamage: 25
-  _baseHealth: 100
+  _baseDamage: 15
+  _baseHealth: 60
   _isConstantStats: 0
   _constantDamageIncrease: 3
   _constantHealthIncrease: 8

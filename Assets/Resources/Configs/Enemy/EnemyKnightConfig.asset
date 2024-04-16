@@ -15,15 +15,16 @@ MonoBehaviour:
   _id: 1
   _unitName: Knight
   _image: {fileID: 4723107735738678597, guid: 3f2e0d32624f2cf418f1759d2970d2fe, type: 3}
+  _costSummoner: 0
   _isUsedDeca: 0
-  _damage: 10
-  _health: 100
+  _damage: 13
+  _health: 200
   _movementSpeed: 50
   _attackSpeed: 0.5
   _attackRadius: 50
   _isBaseStats: 1
-  _baseDamage: 10
-  _baseHealth: 100
+  _baseDamage: 13
+  _baseHealth: 200
   _isConstantStats: 0
   _constantDamageIncrease: 0
   _constantHealthIncrease: 0

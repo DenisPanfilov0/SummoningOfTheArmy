@@ -10,23 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2c5d755aae5247c3abca271a535142d6, type: 3}
-  m_Name: Unit_2
+  m_Name: Mage_Power
   m_EditorClassIdentifier: 
-  _name: And it's all?
+  _name: The Mage's Power
   _currenUpgradeLevel: 0
   _maxUpgradeLevel: 50
   _priceItem: 10
-  _priceModifier: 10
-  _priceModifierDecrement: 0
-  _description: Increases the portal's health points.
-  _isUnitUpgrade: 0
-  _isAccountUpgrade: 1
+  _priceModifier: 15
+  _priceModifierDecrement: 0.1
+  _description: Increasing the mage's strength and health
+  _isUnitUpgrade: 1
+  _isAccountUpgrade: 0
   _isUnlockUnit: 0
   _unitUpgradeStat:
-    _unitConfig: {fileID: 0}
-    _healthIncrease: 0
-    _damageIncrease: 0
+    _unitConfig: {fileID: 11400000, guid: 6425f26001184754786f231590ba388a, type: 2}
+    _healthIncrease: 2
+    _damageIncrease: 2
   _accountUpgradeStat:
-    _healthIncrease: 10
+    _healthIncrease: 0
   _unit:
     _config: {fileID: 0}

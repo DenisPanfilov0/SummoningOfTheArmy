@@ -12,7 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22652496adb542268622dfa2cdc6c19d, type: 3}
   m_Name: Level_3
   m_EditorClassIdentifier: 
-  _spawnConfig:
-  - _enemy: "\u0412\u0435\u0434\u044C\u043C\u0430"
-    _enemyAmount: 15
   _currnetLevel: 3
+  _enemyPortalHealth: 0
+  _spawnConfig:
+  - _enemy: {fileID: 11400000, guid: 5eecf680f5f274440a62ed4709b84067, type: 2}
+    _enemyAmount: 100
+    _enemySpawnRate: 4
+    _enemyReward: 20
+  - _enemy: {fileID: 11400000, guid: 6f0befad98d2f234bb997c0c31714b92, type: 2}
+    _enemyAmount: 100
+    _enemySpawnRate: 3
+    _enemyReward: 40
+  - _enemy: {fileID: 11400000, guid: 216ccc80e60736b4eb0ff2f65bbe5d42, type: 2}
+    _enemyAmount: 100
+    _enemySpawnRate: 10
+    _enemyReward: 150
