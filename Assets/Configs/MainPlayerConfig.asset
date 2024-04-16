@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9f35db312ed411495b66ef49fc225aa, type: 3}
   m_Name: MainPlayerConfig
   m_EditorClassIdentifier: 
-  _portalHealth: 110
-  _balance: 12331
+  _portalHealth: 120
+  _balance: 10
   _maxManaPool: 100
   _startManaPool: 20
   _manaRegeneration: 5

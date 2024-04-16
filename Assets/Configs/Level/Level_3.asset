@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Level_3
   m_EditorClassIdentifier: 
   _currnetLevel: 3
-  _enemyPortalHealth: 0
+  _enemyPortalHealth: 500
   _spawnConfig:
   - _enemy: {fileID: 11400000, guid: 5eecf680f5f274440a62ed4709b84067, type: 2}
     _enemyAmount: 100
