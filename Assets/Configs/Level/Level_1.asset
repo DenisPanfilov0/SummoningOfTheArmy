@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Level_1
   m_EditorClassIdentifier: 
   _currnetLevel: 1
-  _enemyPortalHealth: 120
+  _enemyPortalHealth: 250
   _spawnConfig:
   - _enemy: {fileID: 11400000, guid: 5eecf680f5f274440a62ed4709b84067, type: 2}
     _enemyAmount: 3
     _enemySpawnRate: 2
     _enemyReward: 10
-  - _enemy: {fileID: 11400000, guid: 5eecf680f5f274440a62ed4709b84067, type: 2}
+  - _enemy: {fileID: 11400000, guid: 6f0befad98d2f234bb997c0c31714b92, type: 2}
     _enemyAmount: 100
     _enemySpawnRate: 6
     _enemyReward: 20

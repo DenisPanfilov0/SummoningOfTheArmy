@@ -18,13 +18,13 @@ MonoBehaviour:
   _costSummoner: 0
   _isUsedDeca: 0
   _damage: 40
-  _health: 300
+  _health: 1200
   _movementSpeed: 50
   _attackSpeed: 0.25
   _attackRadius: 50
   _isBaseStats: 1
   _baseDamage: 40
-  _baseHealth: 300
+  _baseHealth: 1200
   _isConstantStats: 0
   _constantDamageIncrease: 0
   _constantHealthIncrease: 0
