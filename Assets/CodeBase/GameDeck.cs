@@ -10,5 +10,15 @@ namespace CodeBase
         [FormerlySerializedAs("_deca")] [SerializeField] private List<UnitConfig> _deck;
 
         public List<UnitConfig> Deck => _deck;
+        
+        public void SaveData()
+        {
+            SaveManager.SaveData(this, name);
+        }
+
+        public void LoadData(string stringKey)
+        {
+            SaveManager.LoadData(this, stringKey);
+        }
     }
 }

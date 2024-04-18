@@ -377,5 +377,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df936a75780244aaa0a5b789f3373a16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mainPlayerConfig: {fileID: 0}
+  _mainPlayerConfig: {fileID: 11400000, guid: 88856bcbb4536124e9e2a1458701c0bf, type: 2}
   _balance: {fileID: 213273823448556684}

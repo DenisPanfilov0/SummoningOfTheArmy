@@ -16,7 +16,7 @@ MonoBehaviour:
   _enemyPortalHealth: 1000
   _spawnConfig:
   - _enemy: {fileID: 11400000, guid: 5eecf680f5f274440a62ed4709b84067, type: 2}
-    _enemyAmount: 10
+    _enemyAmount: 100
     _enemySpawnRate: 2
     _enemyReward: 20
   - _enemy: {fileID: 11400000, guid: 216ccc80e60736b4eb0ff2f65bbe5d42, type: 2}

@@ -17,17 +17,17 @@ MonoBehaviour:
   _image: {fileID: 3234629978573100161, guid: 5f2cc183671f1604384b9a083d996a39, type: 3}
   _costSummoner: 25
   _isUsedDeca: 0
-  _damage: 15
-  _health: 60
-  _movementSpeed: 50
+  _damage: 20
+  _health: 90
+  _movementSpeed: 100
   _attackSpeed: 0.25
   _attackRadius: 70
   _isBaseStats: 0
-  _baseDamage: 15
-  _baseHealth: 60
+  _baseDamage: 20
+  _baseHealth: 90
   _isConstantStats: 0
-  _constantDamageIncrease: 3
-  _constantHealthIncrease: 8
+  _constantDamageIncrease: 0
+  _constantHealthIncrease: 0
   _isPercentageStats: 0
   _percentageDamageIncrease: 0
   _percentageHealthIncrease: 0

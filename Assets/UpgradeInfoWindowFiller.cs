@@ -71,10 +71,16 @@ public class UpgradeInfoWindowFiller : MonoBehaviour
         }
         
         config.CurrenUpgradeLevel++;
-        _mainPlayerConfig.DecreaseBalance(config.PriceItem);
-        config.PriceItem += config.PriceModifier;
-        Init(config);
-        item.Init();
+        
+        bool isBuy = _mainPlayerConfig.DecreaseBalance(config.PriceItem);
+        
+        if (isBuy)
+        {
+            config.PriceItem += config.PriceModifier;
+            config.SaveData();
+            Init(config);
+            item.Init();
+        }
     }
 
     private void UnitUpgrade(UnitUpgrade config)
@@ -83,6 +89,7 @@ public class UpgradeInfoWindowFiller : MonoBehaviour
         float health = config.UnitUpgradeCharacteristic.HealthIncrease;
         config.UnitUpgradeCharacteristic.Unit.ConstantStatIncrease(damage, health);
         config.UnitUpgradeCharacteristic.Unit.StatsCalculate();
+        config.UnitUpgradeCharacteristic.Unit.SaveData();
     }
 
     private void AccountUpgrade(UnitUpgrade config)
@@ -93,5 +100,6 @@ public class UpgradeInfoWindowFiller : MonoBehaviour
     private void UnitUnlock(UnitUpgrade config)
     {
         _heroCollection.Collection.Add(config.Unit.Config);
+        _heroCollection.SaveData();
     }
 }

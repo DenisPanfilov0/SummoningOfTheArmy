@@ -46,24 +46,38 @@ namespace CodeBase.Config
         {
             _balance += amount;
             IsBalanceChange?.Invoke();
+            SaveData();
         }
         
-        public void DecreaseBalance(float amount)
+        public bool DecreaseBalance(float amount)
         {
             if (_balance >= amount)
             {
                 _balance -= amount;
                 IsBalanceChange?.Invoke();
+                SaveData();
             }
             else
             {
-                Debug.LogError("Insufficient funds!");
+                return false;
             }
+
+            return true;
         }
 
         public float GetBalance()
         {
             return _balance;
+        }
+        
+        public void SaveData()
+        {
+            SaveManager.SaveData(this, name);
+        }
+
+        public void LoadData(string stringKey)
+        {
+            SaveManager.LoadData(this, stringKey);
         }
     }
 }

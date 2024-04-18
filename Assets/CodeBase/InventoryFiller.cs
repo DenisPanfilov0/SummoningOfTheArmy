@@ -1,7 +1,5 @@
 using System;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace CodeBase
@@ -28,6 +26,8 @@ namespace CodeBase
 
         private void Start()
         {
+            _heroCollection.LoadData(_heroCollection.name);
+            
             FillInventory();
             
             _equipAHero.onClick.AddListener(AddHeroToDeck);
@@ -71,6 +71,7 @@ namespace CodeBase
             SetInteractableButtons(false, true);
             _gameDeck.Deck.Add(_currentHeroConfig);
             OnChangeDeck?.Invoke();
+            _gameDeck.SaveData();
         }
         
         private void RemoveHeroToDeck()
@@ -80,6 +81,7 @@ namespace CodeBase
             SetInteractableButtons(true, false);
             _gameDeck.Deck.Remove(_currentHeroConfig);
             OnChangeDeck?.Invoke();
+            _gameDeck.SaveData();
         }
         
         private void SetInteractableButtons(bool equipInteractable, bool unEquipInteractable)

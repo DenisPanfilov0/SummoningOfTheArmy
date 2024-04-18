@@ -12,6 +12,7 @@ namespace CodeBase
         
         private void Start()
         {
+            _mainPlayerConfig.LoadData(_mainPlayerConfig.name);
             _mainPlayerConfig = FindObjectOfType<DIContainer>().MainPlayer;
             _mainPlayerConfig.IsBalanceChange += ChangeBalanceUI;
             SetBalanceUI();

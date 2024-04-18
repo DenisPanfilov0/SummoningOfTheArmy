@@ -10,5 +10,15 @@ namespace CodeBase
         [FormerlySerializedAs("_heroCollection")] [SerializeField] private List<UnitConfig> _collection;
 
         public List<UnitConfig> Collection => _collection;
+        
+        public void SaveData()
+        {
+            SaveManager.SaveData(this, name);
+        }
+
+        public void LoadData(string stringKey)
+        {
+            SaveManager.LoadData(this, stringKey);
+        }
     }
 }

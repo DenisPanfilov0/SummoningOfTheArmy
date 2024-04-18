@@ -1,7 +1,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace CodeBase.EditorTool
+namespace Editor
 {
     public class ConditionalHideAttribute : PropertyAttribute {
         public string conditionalSourceField;

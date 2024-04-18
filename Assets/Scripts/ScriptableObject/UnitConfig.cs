@@ -119,4 +119,14 @@ public class UnitConfig : ScriptableObject
             this.invertCondition = invertCondition;
         }
     }
+    
+    public void SaveData()
+    {
+        SaveManager.SaveData(this, name);
+    }
+
+    public void LoadData(string stringKey)
+    {
+        SaveManager.LoadData(this, stringKey);
+    }
 }

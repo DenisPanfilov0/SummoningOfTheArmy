@@ -1,0 +1,11 @@
+# ninja log v5
+27	2406	7349682253335986	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	ee36d8cd97f5a980
+49	2837	7349682253874219	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	2f702e527f765d6f
+88	2838	7349682255357522	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	4bafe9d984dbf498
+76	2850	7349682255463346	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	5dd327efd5b2acf5
+59	2852	7349682257199900	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	9070b6c9ec27e097
+2839	3254	7349682261366957	C:/MyProjects/SummoningOfTheArmy/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/2r6j4x33/obj/arm64-v8a/libswappywrapper.so	d7be93f5f63a59e8
+18	3273	7349682262754166	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	1d8f19c5f6f87b81
+2	3326	7349682263268774	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	c72a1ed2ec2a384c
+38	3344	7349682263485110	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	340b8d2a791fecff
+3345	3559	7349682265019797	C:/MyProjects/SummoningOfTheArmy/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/2r6j4x33/obj/arm64-v8a/libgame.so	44d20a689408402f

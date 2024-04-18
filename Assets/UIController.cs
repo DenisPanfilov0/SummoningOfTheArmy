@@ -3,27 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using CodeBase.Config;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class UIController : MonoBehaviour
 {
-    [SerializeField] private Button _createMageButton;
-    [SerializeField] private Button _createKnightButton;
-    [SerializeField] private Button _createDemonButton;
     [SerializeField] private Transform _allyPrefabSpawnPosition;
     [SerializeField] private Transform _enemyPrefabSpawnPosition;
     [SerializeField] private List<UnitConfig> _configs;
     [SerializeField] private MainPlayerConfig _mainPlayer;
     
     private LevelConfig _levelConfig;
-
-    /*private void Awake()
-    {
-        _createMageButton.onClick.AddListener(CreateMage);
-        _createKnightButton.onClick.AddListener(CreateKnight);
-        _createDemonButton.onClick.AddListener(CreateDemon);
-    }*/
 
     public void InitSpawnPoint(Transform heroSpawn, Transform enemySpawn, LevelConfig levelConfig,
         MainPlayerConfig mainPlayer)
@@ -53,7 +42,8 @@ public class UIController : MonoBehaviour
 
     private void CreateMage()
     {
-        var mageConfig = Resources.Load<UnitConfig>("Configs/Units/MageConfig");
+        UnitConfig mageConfig = Resources.Load<UnitConfig>("Configs/Units/MageConfig");
+        mageConfig.LoadData(mageConfig.name);
         string path = "Prefabs/AllyUnits/MagePrefab";
         UnitCreator creator = new MageCreator(mageConfig);
         AllyUnit mageUnit = (AllyUnit)creator.FactoryMethodAlly(path, _allyPrefabSpawnPosition);
@@ -62,6 +52,7 @@ public class UIController : MonoBehaviour
     private void CreateKnight()
     {
         var knightConfig = Resources.Load<UnitConfig>("Configs/Units/KnightConfig");
+        knightConfig.LoadData(knightConfig.name);
         string path = "Prefabs/AllyUnits/KnightPrefab";
         UnitCreator creator = new KnightCreator(knightConfig);
         AllyUnit knightUnit = (AllyUnit)creator.FactoryMethodAlly(path ,_allyPrefabSpawnPosition);
@@ -70,6 +61,7 @@ public class UIController : MonoBehaviour
     private void CreateDemon()
     {
         var demonConfig = Resources.Load<UnitConfig>("Configs/Units/DemonConfig");
+        demonConfig.LoadData(demonConfig.name);
         string path = "Prefabs/AllyUnits/DemonPrefab";
         UnitCreator creator = new DemonCreator(demonConfig);
         AllyUnit demonUnit = (AllyUnit)creator.FactoryMethodAlly(path, _allyPrefabSpawnPosition);
@@ -78,7 +70,8 @@ public class UIController : MonoBehaviour
 
     private void CreateEnemyMage(float enemyReward)
     {
-        var mageConfig = Resources.Load<UnitConfig>("Configs/Units/MageConfig");
+        var mageConfig = Resources.Load<UnitConfig>("Configs/Enemy/EnemyMageConfig");
+        mageConfig.LoadData(mageConfig.name);
         string path = "Prefabs/Enemy/EnemyMagePrefab";
         UnitCreator creator = new MageCreator(mageConfig);
         EnemyUnit mageUnit = (EnemyUnit)creator.FactoryMethodEnemy(path, _enemyPrefabSpawnPosition, enemyReward, _mainPlayer);
@@ -86,7 +79,8 @@ public class UIController : MonoBehaviour
 
     private void CreateEnemyKnight(float enemyReward)
     {
-        var knightConfig = Resources.Load<UnitConfig>("Configs/Units/KnightConfig");
+        var knightConfig = Resources.Load<UnitConfig>("Configs/Enemy/EnemyKnightConfig");
+        knightConfig.LoadData(knightConfig.name);
         string path = "Prefabs/Enemy/EnemyKnightPrefab";
         UnitCreator creator = new KnightCreator(knightConfig);
         EnemyUnit knightUnit = (EnemyUnit)creator.FactoryMethodEnemy(path, _enemyPrefabSpawnPosition, enemyReward, _mainPlayer);
@@ -94,7 +88,8 @@ public class UIController : MonoBehaviour
     
     private void CreateEnemyDemon(float enemyReward)
     {
-        var demonConfig = Resources.Load<UnitConfig>("Configs/Units/DemonConfig");
+        var demonConfig = Resources.Load<UnitConfig>("Configs/Enemy/EnemyDemonConfig");
+        demonConfig.LoadData(demonConfig.name);
         string path = "Prefabs/Enemy/EnemyDemonPrefab";
         UnitCreator creator = new DemonCreator(demonConfig);
         EnemyUnit demonUnit = (EnemyUnit)creator.FactoryMethodEnemy(path, _enemyPrefabSpawnPosition, enemyReward, _mainPlayer);

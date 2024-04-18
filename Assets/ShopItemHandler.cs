@@ -21,6 +21,8 @@ public class ShopItemHandler : MonoBehaviour
 
     private void Start()
     {
+        _upgradeInfo.LoadData(_upgradeInfo.name);
+        // LoadData(_upgradeInfo.name);
         Init();
         _openPurchaseWindow.onClick.AddListener(OpenUpgradeInfoWindow);
         _upgradeInfoWindowFiller = _upgradeInfoWindow.GetComponent<UpgradeInfoWindowFiller>();
@@ -38,12 +40,6 @@ public class ShopItemHandler : MonoBehaviour
             foreach (var upgrade in _nexUpgrade)
                 if (upgrade != null) 
                     upgrade.SetActive(true);
-        }
-        else
-        {
-            foreach (var upgrade in _nexUpgrade)
-                if (upgrade != null) 
-                    upgrade.SetActive(false);
         }
     }
 
@@ -64,5 +60,15 @@ public class ShopItemHandler : MonoBehaviour
     private bool CanBuyItem()
     {
         return _upgradeInfo.CurrenUpgradeLevel < _upgradeInfo.MaxUpgradeLevel;
+    }
+
+    private void LoadData(string stringKey)
+    {
+        SaveManager.LoadData(this, stringKey);
+    }
+
+    public void SaveData(string stringKey)
+    {
+        SaveManager.SaveData(this, stringKey);
     }
 }

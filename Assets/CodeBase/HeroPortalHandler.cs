@@ -2,6 +2,7 @@ using CodeBase.Config;
 using UnityEngine;
 using UnityEngine.UI;
 using CodeBase.Infrastructure.State;
+using TMPro;
 using UnityEngine.Serialization;
 
 namespace CodeBase
@@ -15,6 +16,8 @@ namespace CodeBase
         [FormerlySerializedAs("_portalPlayer")] [SerializeField] private MainPlayerConfig mainPlayer;
         
         [SerializeField] private float _damage;
+
+        [SerializeField] private TextMeshProUGUI _healthText;
 
         private GameObject _endGameWindow;
 
@@ -31,6 +34,8 @@ namespace CodeBase
 
             _endGameWindow = endGameWindow;
             _stateMachine = stateMachine;
+
+            _healthText.text = _health.ToString();
         }
 
         public void TakeDamage(float damage)
@@ -38,11 +43,15 @@ namespace CodeBase
             if (_health > damage)
             {
                 _health -= damage;
+                _healthText.text = _health.ToString();
+
             }
             else if (!_isWin)
             {
                 _isWin = true;
                 _health = 0;
+                _healthText.text = _health.ToString();
+
                 Debug.Log("ты проиграл");
                 Debug.Log("ты проиграл");
                 Debug.Log("ты проиграл");

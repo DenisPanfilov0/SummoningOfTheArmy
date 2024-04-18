@@ -17,14 +17,14 @@ MonoBehaviour:
   _image: {fileID: 6706057316634897999, guid: 4a7b20a8dafa61d4292ce8f5271f3787, type: 3}
   _costSummoner: 0
   _isUsedDeca: 0
-  _damage: 40
-  _health: 1200
-  _movementSpeed: 50
+  _damage: 20
+  _health: 500
+  _movementSpeed: 100
   _attackSpeed: 0.25
   _attackRadius: 50
   _isBaseStats: 1
-  _baseDamage: 40
-  _baseHealth: 1200
+  _baseDamage: 20
+  _baseHealth: 500
   _isConstantStats: 0
   _constantDamageIncrease: 0
   _constantHealthIncrease: 0

@@ -14,6 +14,7 @@ namespace CodeBase.Config
         [SerializeField, Multiline] private string _description;
 
 
+
         public string Name => _name;
         public int MaxUpgradeLevel => _maxUpgradeLevel;
         public float PriceModifierDecrement => _priceModifierDecrement;
@@ -61,6 +62,17 @@ namespace CodeBase.Config
         public bool IsUnitUpgrade => _isUnitUpgrade;
         public bool IsAccountUpgrade => _isAccountUpgrade;
         public bool IsUnlockUnit => _isUnlockUnit;
+        
+        
+        public void SaveData()
+        {
+            SaveManager.SaveData(this, name);
+        }
+
+        public void LoadData(string stringKey)
+        {
+            SaveManager.LoadData(this, stringKey);
+        }
     }
 
     [System.Serializable]

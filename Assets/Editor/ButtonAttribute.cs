@@ -1,6 +1,6 @@
 using System;
 
-namespace CodeBase.EditorTool
+namespace Editor
 {
     [AttributeUsage(AttributeTargets.Method)]
     public class ButtonAttribute : Attribute { }

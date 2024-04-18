@@ -13,6 +13,8 @@ namespace CodeBase
 
         private void Start()
         {
+            _gameDeck.LoadData(_gameDeck.name);
+            
             FillDeck();
         
             GetComponentInParent<InventoryFiller>().OnChangeDeck += FillDeck;

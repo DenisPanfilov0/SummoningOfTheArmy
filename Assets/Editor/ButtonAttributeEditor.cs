@@ -1,11 +1,11 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace CodeBase.EditorTool
+namespace Editor
 {
     [CustomEditor(typeof(MonoBehaviour), true)]
     [CanEditMultipleObjects]
-    public class ButtonAttributeEditor : Editor
+    public class ButtonAttributeEditor : UnityEditor.Editor
     {
         public override void OnInspectorGUI()
         {
